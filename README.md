@@ -11,4 +11,4 @@ Yo, I'm vs-123
 [![go-chat](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=go-chat)](https://github.com/vs-123/go-chat)
 [![rust-chatting-website](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=rust-chatting-website)](https://github.com/vs-123/rust-chatting-website)
 [![goSpamDetector](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=goSpamDetector)](https://github.com/vs-123/goSpamDetector)
-[![rev](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=rev)](https://github.com/vs-123/rev)
+[![rust-spam-detector](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=rust-spam-detector)](https://github.com/vs-123/rust-spam-detector)
