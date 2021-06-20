@@ -4,7 +4,7 @@ Yo, I'm vs-123
 
 ![vs-123's Github Stats](https://github-readme-stats.vercel.app/api?username=vs-123&count_private=true&show_icons=true)
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vs-123&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vs-123&layout=compact)
 
 [![GoAutoClicker](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=GoAutoClicker)](https://github.com/vs-123/GoAutoClicker)
 [![rust-autoclicker](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=rust-autoclicker)](https://github.com/vs-123/rust-autoclicker)
