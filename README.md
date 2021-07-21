@@ -24,15 +24,15 @@ Yo, I'm vs-123
 </details>
 <details>
 <summary>Dribbble</summary>
-I have a <a href="https://github.com/vs-123">Dribbble account</a> too, I upload images that I've drawn/photoshopped.
+I have a <a href="https://dribbble.com/vahin">Dribbble account</a> too, I upload images that I've drawn/photoshopped.
 </details>
 <details>
 <summary>Games</summary>
-I make games too, check them out at my <a href="https://github.com/vs-123">itch.io</a> account :D
+I make games too, check them out at my <a href="https://vsgame.itch.io/">itch.io</a> account :D
 </details>
 <details>
 <summary>Youtube</summary>
 I make programming tutorials on youtube.
  
-This is my youtube channel -> https://www.youtube.com/c/VahinSharma
+This is my youtube channel -> <a href="https://www.youtube.com/c/VahinSharma">https://www.youtube.com/c/VahinSharma</a>
 </details>
