@@ -9,7 +9,9 @@ Yo, I'm vs-123
 <h3>Projects</h3>
 
 <a href="https://vs-search.herokuapp.com/">VS Search</a> My own search engine
+
 <a href="https://secretnotes.vahin.repl.co/">Secret Notes</a> A code-protected notepad
+
 <a href="https://brokenmassivefont.vahin.repl.co/">VS Chat</a> A chatting website
 
 [![GoAutoClicker](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=GoAutoClicker)](https://github.com/vs-123/GoAutoClicker)
