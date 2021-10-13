@@ -6,6 +6,8 @@ Yo, I'm vs-123
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vs-123&layout=compact)
 
+<img src="https://komarev.com/ghpvc/?username=vs-123" />
+
 <h3>Projects</h3>
 
 <a href="https://vs-search.herokuapp.com/">VS Search</a> My own search engine
