@@ -16,7 +16,7 @@ Yo, I'm vs-123
 
 <a href="https://brokenmassivefont.vahin.repl.co/">VS Chat</a> A chatting website
 
-[![script-ll](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=script-ll)](https://github.com/vs-123/ai-box-rs)
+[![script-ll](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=script-ll)](https://github.com/vs-123/script-ll)
 [![ai-box-rs](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=ai-box-rs)](https://github.com/vs-123/ai-box-rs)
 [![GoAutoClicker](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=GoAutoClicker)](https://github.com/vs-123/GoAutoClicker)
 [![rust-autoclicker](https://github-readme-stats.vercel.app/api/pin/?username=vs-123&repo=rust-autoclicker)](https://github.com/vs-123/rust-autoclicker)
