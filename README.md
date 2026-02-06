@@ -9,6 +9,8 @@ My time spent with Compiler Explorer has deeply influenced my development workfl
 
 As a result of learning and analysing how different compilers target various ISAs, I've gained a well familiarity with several architectures including but not limited to x86-64, x86, MIPS, ARM32/64 and MPPA. This has allowed me to reason about code performance across a wide and diverse range of platforms. 
 
+This exposure with a diverse range of assemblies has granted me the advantage of being able to intuitively read and understand most assemblies, even for architectures I haven't formally encountered before. I find this skill incredibly helpful when debugging programs or reverse-engineering.
+
 
 ## Top Projects
 
