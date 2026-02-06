@@ -1,5 +1,4 @@
 # Introduction 
-<img src="https://komarev.com/ghpvc/?username=vs-123&color=blue&style=flat)" />
 Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find computers in general interesting.
 
 ## Top Projects
@@ -15,9 +14,7 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 ## Skills
 
 <p align="center">
-   <a href="https://skillicons.dev">
-      <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" />
-   </a>
+   <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" width="150%"/>
 </p>
 
 ## Interests
@@ -28,7 +25,15 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 - Statistics
 
 ## Statistics
+![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent)
 <p align="center">
-   <img src="https://github-readme-streak-stats.herokuapp.com/?user=vs-123&hide_border=true&card_width=338&theme=transparent" />
-   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent" />
+   <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent" width="48%" />
+   <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent" width="48%" />
+   <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=vs-123&theme=transparent" width="80%"/>
 </p>
+
+---
+<p align="center">
+   <img src="https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square" width="100px"/>
+</p>
+
