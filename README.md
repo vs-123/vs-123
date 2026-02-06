@@ -33,6 +33,8 @@ This exposure with a diverse range of assemblies has granted me the advantage of
 
 This grasp on assembly developed over the years, combined with my interest in language implementation, has led me to a much deeper understanding of the core mechanics of a computer. It allows me to evaluate the specific trade-offs and underlying philosophies offered by different programming languages from the POV of how they actually work under the hood.
 
+In addition to code, I enjoy exploring the philosophies of different software and their communities. This curiosity drives my appreciation for Linux, UNIX, *nixes as well as the POSIX standard. I understand and appreciate the historical design patterns and the ideologies emerged historically. I find more interest in the "why" of a system's design more than I do in the "how" of its execution.
+
 ## Statistics
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent)
 <p align="center">
