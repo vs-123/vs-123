@@ -1,5 +1,4 @@
 # Introduction 
-
 Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find computers in general interesting.
 
 ## Top Projects
@@ -12,6 +11,14 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 - [kernel](https://github.com/vs-123/kernel) -- A dead-simple kernel written in C
 - [auc](https://github.com/vs-123/auc) -- A cross-platform auto-clicker in C
 
+## Skills
+
+<p align="center">
+   <a href="https://skillicons.dev">
+      <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" />
+   </a>
+</p>
+
 ## Interests
 
 - Compiler & Interpreter Development
@@ -19,13 +26,9 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 - Disassembly
 - Statistics
 
-## Skills
-
+## Statistics
 <p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" />
-  </a>
+   <img src="https://komarev.com/ghpvc/?username=vs-123&color=blue&style=flat)" />
+   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent" />
+   <img src="https://github-readme-streak-stats.herokuapp.com/?user=vs-123&hide_border=true&card_width=338&theme=transparent" />
 </p>
-
-
-
