@@ -19,3 +19,13 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 - Disassembly
 - Statistics
 
+## Skills
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" />
+  </a>
+</p>
+
+
+
