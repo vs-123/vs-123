@@ -11,3 +11,11 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 - [Royal Hemlock](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs
 - [kernel](https://github.com/vs-123/kernel) -- A dead-simple kernel written in C
 - [auc](https://github.com/vs-123/auc) -- A cross-platform auto-clicker in C
+
+## Interests
+
+- Compiler & Interpreter Development
+- *nix, POSIX
+- Disassembly
+- Statistics
+
