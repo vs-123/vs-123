@@ -1,4 +1,5 @@
 # Introduction 
+<img src="https://komarev.com/ghpvc/?username=vs-123&color=blue&style=flat)" />
 Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find computers in general interesting.
 
 ## Top Projects
@@ -28,7 +29,6 @@ Hi. I'm vs-123. I am a passionate programmer. I enjoy programming and I find com
 
 ## Statistics
 <p align="center">
-   <img src="https://komarev.com/ghpvc/?username=vs-123&color=blue&style=flat)" />
-   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent" />
    <img src="https://github-readme-streak-stats.herokuapp.com/?user=vs-123&hide_border=true&card_width=338&theme=transparent" />
+   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent" />
 </p>
