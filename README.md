@@ -12,7 +12,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 ## Top Projects
 
-- [Tegen](https://github.com/vs-123/tegen.git) -- A recursive, stochastic text generator for Rust
+- [Tegen](https://github.com/vs-123/tegen) -- A recursive, stochastic text generator for Rust
 - [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques
 - [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C.
 - [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using [ystar](https://github.com/vs-123/ystar) for mine generation
@@ -77,7 +77,152 @@ nop   # (delay slot, wasted)
 
 The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
 
-It's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies
+Honestly it's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies
+
+</details>
+
+<details>
+<summary>PPCI Compiler</summary>
+
+Here's a simple C code
+```c
+int main() {
+   int y = 1;
+   int z = 2;
+   int x = y + z;
+   
+   return 0;
+}
+```
+
+It's pretty simple, you have an integer `x` with just the value `y + z`
+
+Now let's compile this with a different C compiler. Not GCC, not Clang, we will use the ppci compiler.
+
+We'll compile using the flags `--std=c89 -O0` (link if you wanna see: https://c.godbolt.org/z/Wq7vcv5ec)
+
+This generates the following assembly:
+```as
+       section data
+       section code
+ main:
+       push rbp
+       mov rbp, rsp
+       sub rsp, 24
+ main_block0:
+       mov r8, 1
+       mov [rbp, -8], r8
+       mov r8, 2
+       mov [rbp, -16], r8
+       mov r8, [rbp, -8]
+       mov r11, [rbp, -16]
+       add r8, r11
+       mov [rbp, -24], r8
+       mov rax, 0
+       jmp main_epilog
+ main_epilog:
+       add rsp, 24
+       pop rbp
+       ret
+```
+
+`main:` is the `int main() {` part and `main_epilog` is the `}` part (end of `main()` function)
+
+The main interesting part I wanted to talk about is in `main_block0`, specifically this part:
+```as
+ ...
+ main_block0:
+       mov r8, 1
+       mov [rbp, -8], r8
+       mov r8, 2
+       mov [rbp, -16], r8
+ ...
+```
+
+These are our `int z` & `int y` variables. It's being stored using register `r8` as the temporary register in the stack at positions `rbp - 8` and `rbp - 16`
+
+The real interesting part is that it's storing the other int at `rbp - 16` instead of what you'd normally expect to be `rbp - 12`.
+
+The thing is that, most compilers that target x86-64, x86, ARM, MIPS, etc. like clang and gcc, typically use 4 bytes for an `int`.
+
+This means that, given a stack pointer `sp`, the variables `int z` & `int y` should have been stored in the stack register at `n` bytes away from `sp` (i.e. `sp - n`) and the other one must have been stored 4 bytes away from the last one (i.e. `sp - (n+4)`) like:
+
+```as
+main:
+    mov [rbp - 8], 1
+    mov [rbp - 12], 2
+```
+
+However, notice that in the case of PPCI, it stores them at `rbp - 8` and **`rbp - 16`** instead of `rbp - 12`. It's using offset of `8` instead of `4` bytes.
+
+**Question: Does PPCI treat `ints` as 8 bytes instead of 4?**
+
+Let's find out.
+
+Here's another C program. We'll compile it with the same compiler flags using PPCI.
+```c
+int main() {
+   return sizeof(int);
+}
+```
+
+Essentially, our `main()` function should return the size of `int`.
+
+Here's the assembly for it:
+```as
+       section data
+       section code
+ main:
+       push rbp
+       mov rbp, rsp
+ main_block0:
+       mov rax, 8
+       jmp main_epilog
+ main_epilog:
+       pop rbp
+       ret
+```
+
+Notice the instruction `mov rax, 8`. That confirms that our `int` in PPCI is being treated as `8` bytes instead of the usual `4` bytes.
+
+So our previous code seems to be consistent. But wait, most compilers and platforms use 4 bytes for an `int`, PPCI is using 8 bytes. Does this mean PPCI is breaking the C standard?
+
+**Question: Does PPCI break the C standard?**
+
+Let's look at how C standard defines an `int`:
+![C standard int](https://github.com/vs-123/blob/main/c_std_int.webp)
+
+This screenshot is from the official C standard.
+
+It essentially says that an `int` must be able to AT LEAST hold a number within the range `[−32767, +32767]`
+
+The C standard does not say that an `int` must be 4 bytes, rather it says that it should be able to hold AT LEAST 2 bytes. Note that it's the LEAST, this means an `int` can theoretically be as large or as small as the compiler/platform wants, it just needs to be able to hold a number within that range in order to call itself an `int`.
+
+Thus, most systems use their own convention for convenience.
+
+For example, an `int` in MS-DOS 2 bytes. The same `int` in Windows x86 is 4 bytes.
+
+There's two interesting conventions called LP64 and LLP64. It dictates the size of `long`s, `long long`s, and pointers.
+
+The names themselves are actually shorthands for which types are 8 bytes. `L` = `long`, `LL` = `long logng`, `P` = pointer. The 64 at the end says they take up 64-bits of storage.
+
+Majority of UNIX and UNIX-like systems use the LP64 model, whereas Windows uses LLP64 to maintain backward compatibility.
+
+This means that a `long` on macOS would be 8 bytes, but the same `long` on Windows would be 4 bytes.
+
+Coming back to PPCI, what does this "an `int` must be at least 2 bytes" have to do with it?
+
+This implies that, PPCI is actually standard C and its `int` is perfectly 100% standard-compliant.
+
+Ok now the bigger question, why does PPCI make it 8 bytes instead of 4 bytes?
+
+I'm not quite sure about this, but I believe that PPCI treats it as 8 bytes just so it can use the value directly in `rax` for simplicity.
+
+If that's the case, there's an implication that since it is promoting our 4 byte int into an 8 byte stack, it actually keeps the stack perfectly aligned for CPU processing.
+
+This is actually perfect because an x64 CPU prefers to read data in chunks of 8 bytes rather than chunks of 4 bytes like x86 CPUs.
+
+So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 
 </details>
 
