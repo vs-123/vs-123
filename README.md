@@ -49,7 +49,6 @@ In addition to code, I enjoy exploring the philosophies of different software an
 <p align="center">
    <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent" width="48%" />
    <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent" width="48%" />
-   <img src="http://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=vs-123&theme=transparent" width="80%"/>
 </p>
 
 ---
