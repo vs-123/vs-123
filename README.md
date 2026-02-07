@@ -295,6 +295,8 @@ In addition to this, modern CPUs don't really "calculate" this `xor eax, eax` op
 
 There's also a side effect related to this in x86-64. The thing is that a x32 operation like `xor eax, eax` automatically zero extends to the full x64 `rax` register. This implies that `xor eax, eax` clears all 64 bits. This makes `xor eax, eax` more efficient than `xor rax, rax` because the x32 one also avoids REX prefix byte which saves even more space.
 
+What's even cooler about this is that this `xor` operation tells the CPU that `eax` no longer depends on whatever its previous value was. This actually gives the CPU a green light to perform "out of order" execution, meaning it can do its next task without having to wait for the old `eax` to retire.
+
 
 </details>
 
