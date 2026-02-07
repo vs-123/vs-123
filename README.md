@@ -190,7 +190,7 @@ So our previous code seems to be consistent. But wait, most compilers and platfo
 **Question: Does PPCI break the C standard?**
 
 Let's look at how C standard defines an `int`:
-![C standard int](https://github.com/vs-123/blob/main/c_std_int.webp)
+![C standard int](https://github.com/vs-123/vs-123/blob/7d4c2b0872f05f84c4f8910fa5f1ffdd4c00f860/c_std_int.webp)
 
 This screenshot is from the official C standard.
 
