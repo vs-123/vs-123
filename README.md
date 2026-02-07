@@ -35,6 +35,52 @@ This grasp on assembly developed over the years, combined with my interest in la
 
 In addition to code, I enjoy exploring the philosophies of different software and their communities. This curiosity drives my appreciation for Linux, UNIX, *nixes as well as the POSIX standard. I understand and appreciate the historical design patterns and the ideologies emerged historically. I find more interest in the "why" of a system's design more than I do in the "how" of its execution.
 
+## Rambling
+
+<details>
+<summary>MIPS Compiler Magic: Branch Delay Slot</summary>
+
+Consider the following simple C code:
+```c
+int add(int x, int y) {
+   return x + y;
+}
+
+```
+
+When we compile it with `-O3` targetting MIPS, we get this assembly:
+```as
+add:
+   jr     $31
+   addu   $2,$4,$5
+
+```
+
+Notice something interesting is going on here. It does the addition *after* returning from the function. What's going on?
+
+Just FYI:
+- `$31` is the return address (RA).
+- `$2` holds the return value (V0).
+- `$4` and `$5` are arguments `x` and `y`.
+- `jr $31` is the jump register (i.e. return) instruction.
+
+At first glance, it looks like the function returns before it ever adds the numbers. However this is a special hardware feature of MIPS called the Branch Delay Slot (BDS).
+
+In a general MIPS pipeline, the instruction immediately following a branch or jump is executed *before* the jump actually completes. Usually when you have a compiler without optimisations, the compiler's just gonna put a `nop` there to waste time.
+
+However in this case, the C compiler is actually being efficient here. Instead of doing something like:
+```as
+addu $2,$4,$5   # (cycle 1)
+jr   # $31 (cycle 2)
+nop   # (delay slot, wasted)
+```
+
+The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
+
+It's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies
+
+</details>
+
 ## Miscellaneous
 
 | Aspect | Choice  |
