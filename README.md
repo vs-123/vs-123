@@ -226,6 +226,78 @@ So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 
 </details>
 
+<details>
+<summary>Why XOR EAX, EAX?</summary>
+
+Let's take a very simple C program as follows:
+```c
+int main(void) {
+   return 42;
+}
+```
+
+Compiling this using `clang`, targetting x86-64 with the highest optimisation using `-O3`, we get:
+```asm
+main:
+        mov     eax, 42
+        ret
+```
+
+`mov eax, 42` sets `eax` to `42` and then `ret` returns it (as the program's exit code).
+
+Let's try another number.
+```c
+int main(void) {
+   return 128;
+}
+```
+
+Compiling this with the same flags as the previous one, we get:
+```asm
+main:
+        mov     eax, 128
+        ret
+```
+
+Notice that both the assemblies are pretty much identical, except the `42` changed to `128`. 
+
+Seems fair enough, let's try the usual `return 0;`. As you might expect, we're gonna get `mov eax, 0`.
+```c
+int main(void) {
+   return 0;
+}
+```
+
+Compiling this with the same setup, we get:
+```asm
+main:
+        xor     eax, eax
+        ret
+```
+
+Interesting, looks like we didn't get the `mov eax, 0` we were expecting. Instead, we got `xor eax, eax`. 
+
+Why's it tryna be all fancy in here? Why `xor` instead of the usual `mov`? Turns out, there's an interesting reason behind this.
+
+If we strip away the fancy stuff, assembly languages are just syntactic sugar for machine code. Instead of manually writing stuff like `48 b8 88 77 66 55 44 33 22 11` and `48 01 d8`, we write `mov rax, 0x1122334455667788` and `add rax, rbx` because these are much more readable and easier to maintain.
+
+In this case, when we have `mov eax, 128` in x86-64, it usually encodes to something like `b8 80 00 00 00`, where `b8` is the opcode for `mov eax` and `128` is encoded as `80 00 00 00` (`0x80` = `128`). The reason it's `80 00 00 00` instead of `00 00 00 80` is because x86 is little endian, hence the least significant byte appears first.
+
+Similarly, `mov eax, 0` would encode to `b8 00 00 00 00`, and it makes perfect sense why.
+
+What about `xor eax, eax`? `xor eax, eax` actually encodes to just `31 c0`. `31` is the opcode for `xor`, and `c0` is the mod r/m byte. In binary, `c0` turns to `11 000 000`, where `11` says that it's a "register to register" kind of operation (no memory addresses involved), and both of the `000`s refer to register `eax`.
+
+Okay, let's get this straight. `mov eax, 0` becomes `b8 00 00 00 00`, and `xor eax, eax` becomes `31 c0`. Cool, so what? Why does that make `xor eax, eax` any better?
+
+The idea is that, `mov eax, 0` encodes to `5` bytes, whereas `31 c0` is just two bytes. This implies that, when you have a program with thousands of zero-initialisations, the compiler's choice of `xor eax, eax` over `mov eax, 0` actually shaves off several potential kilobytes off your binary size. This makes the binary smaller, and hence you're gonna have better I-cache density, hence fewer cache misses.
+
+In addition to this, modern CPUs don't really "calculate" this `xor eax, eax` operation. The thing is that there's a logical component in your CPU called "register renamer". Basically, it's sort of a dictionary full of several "idioms". So when it sees a common pattern like `xor eax, eax`, the register renamer recognises it from its dictionary and immediately marks the register zero instead of sending it to the ALU. This makes the instruction execute at zero latency and also doesn't hog up an execution port.
+
+There's also a side effect related to this in x86-64. The thing is that a x32 operation like `xor eax, eax` automatically zero extends to the full x64 `rax` register. This implies that `xor eax, eax` clears all 64 bits. This makes `xor eax, eax` more efficient than `xor rax, rax` because the x32 one also avoids REX prefix byte which saves even more space.
+
+
+</details>
+
 ## Miscellaneous
 
 | Aspect | Choice  |
