@@ -14,6 +14,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 - [Tegen](https://github.com/vs-123/tegen.git) -- A recursive, stochastic text generator for Rust
 - [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques
+- [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C.
 - [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using [ystar](https://github.com/vs-123/ystar) for mine generation
 - [mbf](https://github.com/vs-123/mbf) -- A custom [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) with the addition of Macros
 - [Royal Hemlock](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs
