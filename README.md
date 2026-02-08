@@ -13,13 +13,13 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 ## Top Projects
 
 - [Tegen](https://github.com/vs-123/tegen) -- A recursive, stochastic text generator for Rust
-- [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques
+- [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques (plots available in repo)
 - [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C.
-- [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C
-- [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch.
-- [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using [ystar](https://github.com/vs-123/ystar) for mine generation
+- [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C (screenshots available in repo)
+- [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch
+- [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using [ystar](https://github.com/vs-123/ystar) for mine generation (screenshots available in repo)
 - [mbf](https://github.com/vs-123/mbf) -- A custom [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) with the addition of Macros
-- [Royal Hemlock](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs
+- [Royal Hemlock](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs (screenshots available in repo)
 - [kernel](https://github.com/vs-123/kernel) -- A dead-simple kernel written in C
 - [auc](https://github.com/vs-123/auc) -- A cross-platform auto-clicker in C
 
