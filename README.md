@@ -13,7 +13,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 ## Top Projects
 
 - [Tegen](https://github.com/vs-123/tegen) -- A recursive, stochastic text generator for Rust
-- [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques (plots available in repo)
+- [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques (images of plots available in repo)
 - [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C.
 - [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C (screenshots available in repo)
 - [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch
