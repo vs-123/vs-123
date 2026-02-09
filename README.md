@@ -12,17 +12,17 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 ## Top Projects
 
-- [Tegen](https://github.com/vs-123/tegen) -- A recursive, stochastic text generator for Rust
-- [ystar](https://github.com/vs-123/ystar) -- A custom xorshift64* PRNG implementation in C, tested with various statistical techniques (images of plots available in repo)
-- [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C.
-- [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C (screenshots available in repo)
+- [ystar](https://github.com/vs-123/ystar) -- A xorshift64* PRNG implementation in C **with my own custom constants**, tested with various statistical tests including Wald-Wolfowitz Runs test and Lag-1 Correlation test. **Plots available in README**
+- [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully-functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C. **Screenshots available in README**
+- [mbf](https://github.com/vs-123/mbf) -- A custom [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
 - [halloc](https://github.com/vs-123/bpvm) -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C
+- [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C
 - [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch
-- [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using [ystar](https://github.com/vs-123/ystar) for mine generation (screenshots available in repo)
-- [mbf](https://github.com/vs-123/mbf) -- A custom [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) with the addition of Macros
-- [Royal Hemlock](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs (screenshots available in repo)
+- [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using my own [ystar](https://github.com/vs-123/ystar) PRNG for mine generation and placement. **Screenshots available in README**
 - [kernel](https://github.com/vs-123/kernel) -- A dead-simple kernel written in C
+- [tegen](https://github.com/vs-123/tegen) -- A recursive, stochastic text generator for Rust
 - [auc](https://github.com/vs-123/auc) -- A cross-platform auto-clicker in C
+- [Royal Hemlock Theme](https://github.com/vs-123/royal-hemlock-theme) -- Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
 
 ## Interests
 
