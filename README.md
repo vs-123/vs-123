@@ -16,7 +16,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 - [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully-functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C. **Screenshots available in README**
 - [mbf](https://github.com/vs-123/mbf) -- A custom [BF](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
 - [halloc](https://github.com/vs-123/bpvm) -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C
-- [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C
+- [regen](https://github.com/vs-123/regen) -- A dead-simple, PCRE-compatible, regular-expressions engine written in C
 - [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch
 - [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C, using my own [ystar](https://github.com/vs-123/ystar) PRNG for mine generation and placement. **Screenshots available in README**
 - [kernel](https://github.com/vs-123/kernel) -- A dead-simple kernel written in C
