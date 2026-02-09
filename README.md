@@ -14,7 +14,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 - [ystar](https://github.com/vs-123/ystar) -- A xorshift64* PRNG implementation in C **with my own custom constants**, tested with various statistical tests including Wald-Wolfowitz Runs test and Lag-1 Correlation test. **Plots available in README**
 - [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully-functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C. **Screenshots available in README**
-- [mbf](https://github.com/vs-123/mbf) -- A custom [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
+- [mbf](https://github.com/vs-123/mbf) -- A custom [BF](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
 - [halloc](https://github.com/vs-123/bpvm) -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C
 - [regen](https://github.com/vs-123/regen) -- A dead-simple regex-engine written in C
 - [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters, written from scratch
