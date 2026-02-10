@@ -12,8 +12,8 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 ## Top Projects
 
-- [ystar](https://github.com/vs-123/ystar) -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
 - [regen](https://github.com/vs-123/regen) -- A dead-simple, PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
+- [ystar](https://github.com/vs-123/ystar) -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
 - [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully-functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
 - [halloc](https://github.com/vs-123/halloc) -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
 - [mbf](https://github.com/vs-123/mbf) -- A custom [BF](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
