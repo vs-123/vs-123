@@ -16,6 +16,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 - [ystar](https://github.com/vs-123/ystar) -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
 - [bpvm](https://github.com/vs-123/bpvm) -- A dead-simple, fully-functional [BytePusher](https://esolangs.org/wiki/BytePusher) VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
 - [halloc](https://github.com/vs-123/halloc) -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
+- [barc](https://github.com/vs-123/barc) -- A dead-simple, lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
 - [mbf](https://github.com/vs-123/mbf) -- A custom [BF](https://en.wikipedia.org/wiki/Brainfuck) implementation, with the addition of **macros**
 - [dstr](https://github.com/vs-123/dstr) -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
 - [mswpr](https://github.com/vs-123/minesweeper-c) -- Fully functional Minesweeper implementation in C99, using my own [ystar](https://github.com/vs-123/ystar) PRNG for mine generation and placement. **Screenshots available in README**
