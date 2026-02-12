@@ -10,6 +10,45 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
    <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" width="150%"/>
 </p>
 
+- **C** -- C is my primary vehicle for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
+
+- **C++** -- C++ has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
+
+- **Rust** -- Rust used to be my daily-driver. Rust had shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
+
+- **WASM** -- I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
+
+- **Regex** -- Beyond just using it, I've implemented a PCRE-compatible engine called [regen](https://github.com/vs-123/regen) from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
+
+- **Go** -- Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
+
+- **Python** -- I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of [ystar](https://github.com/vs-123/ystar)
+
+- **Lua** -- I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
+
+- **Haskell** -- Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
+
+- **HTML5, CSS, JS** -- These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to **Electron**, which had piqued my interest in GUI application development.
+
+- **TypeScript** -- TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
+
+- **Linux & BSD** -- I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although Void Linux is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
+
+- **Vim** -- Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
+
+- **Emacs** -- Emacs was my next daily-driver as a text editor. I enjoyed its highly customisable nature. But what stood out for me the most is the idea that it's a "self-documenting editor". I highly appreciated its built-in help features, especially `C-h` chords
+
+- **Neovim** -- Neovim is my current text editor of choice, I use it for programming most of my projects, including this README. I occasionally use `ed` for making quick edits
+
+- **CMake** -- CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
+
+- **Git** -- Git is my favourite version control system. I use it frequently when I develop projects. It allows me to manage the evolution of my source code, which aids in keeping the project tidy and organised
+
+- **CI/CD & Docker** -- I utilise GitHub actions and Docker to automate the testing of my projects across different environments, and also to streamline binary distribution
+
+- **LaTeX & Markdown** -- These are my tools of choice when it comes to technical documentation and making general notes
+
+
 ## Top Projects
 
 - [regen](https://github.com/vs-123/regen) -- A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
@@ -39,7 +78,7 @@ This grasp on assembly developed over the years, combined with my interest in la
 
 In addition to code, I enjoy exploring the philosophies of different software and their communities. This curiosity drives my appreciation for Linux, UNIX, *nixes as well as the POSIX standard. I understand and appreciate the historical design patterns and the ideologies emerged historically. I find more interest in the "why" of a system's design more than I do in the "how" of its execution.
 
-## Rambling
+## Interesting Observations
 
 <details>
 <summary>MIPS Compiler Magic: Branch Delay Slot</summary>
@@ -70,13 +109,13 @@ Just FYI:
 
 At first glance, it looks like the function returns before it ever adds the numbers. However this is a special hardware feature of MIPS called the Branch Delay Slot (BDS).
 
-In a general MIPS pipeline, the instruction immediately following a branch or jump is executed *before* the jump actually completes. Usually when you have a compiler without optimisations, the compiler's just gonna put a `nop` there to waste time.
+In a general MIPS pipeline, the instruction immediately following a branch or jump is executed *before* the jump actually completes.
 
-However in this case, the C compiler is actually being efficient here. Instead of doing something like:
+Hence in this case, the C compiler is actually being smart here. Instead of doing something like:
 ```as
 addu $2,$4,$5   # (cycle 1)
-jr   # $31 (cycle 2)
-nop   # (delay slot, wasted)
+jr              # $31 (cycle 2)
+nop             # (delay slot)
 ```
 
 The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
