@@ -26,6 +26,8 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 - **Lua** -- I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
+- **ELisp** -- I really enjoy LISP languages. I use ELisp primarily for my Emacs configuration. 
+
 - **Haskell** -- Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
 
 - **HTML5, CSS, JS** -- These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to **Electron**, which had piqued my interest in GUI application development.
@@ -36,9 +38,9 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 - **Vim** -- Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
 
-- **Emacs** -- Emacs was my next daily-driver as a text editor. I enjoyed its highly customisable nature. But what stood out for me the most is the idea that it's a "self-documenting editor". I highly appreciated its built-in help features, especially `C-h` chords
+- **Emacs** -- Emacs is my daily-driver as a text editor. I enjoy its highly customisable nature. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
 
-- **Neovim** -- Neovim is my current text editor of choice, I use it for programming most of my projects, including this README. I occasionally use `ed` for making quick edits
+- **Neovim** -- Neovim used to be my text editor of choice. I used to use it for programming most of my projects. For quick edits however I use `ed`
 
 - **CMake** -- CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
 
@@ -343,12 +345,45 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 
 </details>
 
+<details>
+<summary>Restrict</summary>
+
+Consider the following C code:
+```c
+void addv(int *a, int *b, int *val) {
+   *a += *val;
+   *b += *val;
+}
+``` 
+
+We take three pointers to some `int`s called `a`, `b` and `val`, and add the value of `val` to the values of `a` and `b`.
+
+Let's compile it using GCC with `-O3` and take a look at its assembly (MIPS):
+```as
+addv:
+    lw      $3,0($6)
+    lw      $2,0($4)
+    nop
+    addu    $2,$2,$3
+    sw      $2,0($4)
+    lw      $2,0($5)
+    lw      $3,0($6)
+    nop
+    addu    $2,$2,$3
+    jr      $31
+    sw      $2,0($5)
+```
+
+
+    
+</details>
+
 ## Miscellaneous
 
 | Aspect | Choice  |
 | :--- | :--- |
 | Environment | [My Dotfiles](https://github.com/vs-123/dotfiles) |
-| Text Editor | [Neovim](https://github.com/vs-123/dotfiles/tree/main/dot_config/nvim) |
+| Text Editor | [Emacs](https://github.com/vs-123/dotfiles/tree/main/dot_emacs) |
 | OS | [Void Linux](https://voidlinux.org/) |
 | WM | [Openbox](https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox) |
 | Shell | [Zsh](https://github.com/vs-123/dotfiles/blob/main/dot_zshrc) |
