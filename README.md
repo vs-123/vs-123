@@ -10,7 +10,7 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
    <img src="https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord" width="150%"/>
 </p>
 
-- **C** -- C is my primary vehicle for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
+- **C** -- C is my primary tool of choice for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
 
 - **C++** -- C++ has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
 
