@@ -348,39 +348,6 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 
 </details>
 
-<details>
-<summary>Restrict</summary>
-
-Consider the following C code:
-```c
-void addv(int *a, int *b, int *val) {
-   *a += *val;
-   *b += *val;
-}
-``` 
-
-We take three pointers to some `int`s called `a`, `b` and `val`, and add the value of `val` to the values of `a` and `b`.
-
-Let's compile it using GCC with `-O3` and take a look at its assembly (MIPS):
-```as
-addv:
-    lw      $3,0($6)
-    lw      $2,0($4)
-    nop
-    addu    $2,$2,$3
-    sw      $2,0($4)
-    lw      $2,0($5)
-    lw      $3,0($6)
-    nop
-    addu    $2,$2,$3
-    jr      $31
-    sw      $2,0($5)
-```
-
-
-    
-</details>
-
 ## Miscellaneous
 
 | Aspect | Choice  |
