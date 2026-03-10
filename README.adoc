@@ -1,5 +1,6 @@
 :skill-icons-url: https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord
 :cpp: C++
+:em: {sp}\--{sp}
 
 = Introduction 
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
@@ -13,63 +14,63 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 [.text-center]
 image::{skill-icons-url}[width=100%, align=center]
 
-* **C** -- C is my primary tool of choice for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
+* **C** {em} C is my primary tool of choice for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
 
-* **{cpp}** -- {cpp} has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
+* **{cpp}** {em} {cpp} has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
 
-* **Rust** -- Rust used to be my daily-driver. Rust had shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
+* **Rust** {em} Rust used to be my daily-driver. Rust had shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
 
-* **WASM** -- I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
+* **WASM** {em} I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
 
-* **Regex** -- Beyond just using it, I've implemented a PCRE-compatible engine called [regen](https://github.com/vs-123/regen) from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
+* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called [regen](https://github.com/vs-123/regen) from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
 
-* **Go** -- Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
+* **Go** {em} Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
 
-* **Python** -- I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of [ystar](https://github.com/vs-123/ystar)
+* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of [ystar](https://github.com/vs-123/ystar)
 
-* **Lua** -- I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
+* **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
-* **ELisp** -- I really enjoy LISP languages. I use ELisp primarily for my Emacs configuration. 
+* **ELisp** {em} I really enjoy LISP languages. I use ELisp primarily for my Emacs configuration. 
 
-* **Haskell** -- Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
+* **Haskell** {em} Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
 
-* **HTML5, CSS, JS** -- These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to **Electron**, which had piqued my interest in GUI application development.
+* **HTML5, CSS, JS** {em} These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to **Electron**, which had piqued my interest in GUI application development.
 
-* **TypeScript** -- TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
+* **TypeScript** {em} TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
 
-* **Linux & BSD** -- I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although Void Linux is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
+* **Linux & BSD** {em} I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although Void Linux is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
 
-* **Vim** -- Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
+* **Vim** {em} Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
 
-* **Emacs** -- Emacs is my daily-driver as a text editor. I enjoy its highly customisable nature. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
+* **Emacs** {em} Emacs is my daily-driver as a text editor. I enjoy its highly customisable nature. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
 
-* **Neovim** -- Neovim used to be my text editor of choice. I used to use it for programming most of my projects. For quick edits however I use `ed`
+* **Neovim** {em} Neovim used to be my text editor of choice. I used to use it for programming most of my projects. For quick edits however I use `ed`
 
-* **CMake** -- CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
+* **CMake** {em} CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
 
-* **Git** -- Git is my favourite version control system. I use it frequently when I develop projects. It allows me to manage the evolution of my source code, which aids in keeping the project tidy and organised
+* **Git** {em} Git is my favourite version control system. I use it frequently when I develop projects. It allows me to manage the evolution of my source code, which aids in keeping the project tidy and organised
 
-* **CI/CD & Docker** -- I utilise GitHub actions and Docker to automate the testing of my projects across different environments, and also to streamline binary distribution
+* **CI/CD & Docker** {em} I utilise GitHub actions and Docker to automate the testing of my projects across different environments, and also to streamline binary distribution
 
-* **LaTeX & Markdown** -- These are my tools of choice when it comes to technical documentation and making general notes
+* **LaTeX & Markdown** {em} These are my tools of choice when it comes to technical documentation and making general notes
 
 == Top Projects
 
-* https://github.com/vs-123/regen[regen] -- A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
-* https://github.com/vs-123/ystar[ystar] -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
-* https://github.com/vs-123/bpvm[bpvm] -- A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
-* https://github.com/vs-123/halloc[halloc] -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
-* https://github.com/vs-123/barc[barc] -- A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
-* https://github.com/vs-123/l-tail[l-tail] -- A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
-* https://github.com/vs-123/dman[dman] -- An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
-* https://github.com/vs-123/qenv[qenv] -- A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
-* https://github.com/vs-123/mbf[mbf] -- A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of **macros**
-* https://github.com/vs-123/dstr[dstr] -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
-* https://github.com/vs-123/minesweeper-c[mswpr] -- Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar] PRNG for mine generation and placement. **Screenshots available in README**
-* https://github.com/vs-123/kernel[kernel] -- A dead-simple kernel written in C99 with LLVM toolchain
-* https://github.com/vs-123/tegen[tegen] -- A recursive, stochastic text generator for Rust
-* https://github.com/vs-123/auc[auc] -- A cross-platform auto-clicker in C99
-* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme] -- Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
+* https://github.com/vs-123/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
+* https://github.com/vs-123/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
+* https://github.com/vs-123/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
+* https://github.com/vs-123/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
+* https://github.com/vs-123/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
+* https://github.com/vs-123/l-tail[l-tail] {em} A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
+* https://github.com/vs-123/dman[dman] {em} An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
+* https://github.com/vs-123/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
+* https://github.com/vs-123/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of **macros**
+* https://github.com/vs-123/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
+* https://github.com/vs-123/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar] PRNG for mine generation and placement. **Screenshots available in README**
+* https://github.com/vs-123/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
+* https://github.com/vs-123/tegen[tegen] {em} A recursive, stochastic text generator for Rust
+* https://github.com/vs-123/auc[auc] {em} A cross-platform auto-clicker in C99
+* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
 
 == Interests
 
