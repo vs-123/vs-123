@@ -352,13 +352,15 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 
 == Miscellaneous
 
-| Aspect | Choice  |
-| :--- | :--- |
-| Environment | https://github.com/vs-123/dotfiles[My Dotfiles] |
-| Text Editor | https://github.com/vs-123/dotfiles/tree/main/dot_emacs[Emacs] |
-| OS | https://voidlinux.org/[Void Linux] |
-| WM | https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox[Openbox] |
-| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh] |
+[cols="1,1",options="header"]
+|===
+| Aspect | Choice  
+| Environment | https://github.com/vs-123/dotfiles[My Dotfiles] 
+| Text Editor | https://github.com/vs-123/dotfiles/tree/main/dot_emacs[Emacs] 
+| OS | https://voidlinux.org/[Void Linux] 
+| WM | https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox[Openbox] 
+| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh] 
+|===
 
 == Statistics
 
