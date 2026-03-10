@@ -1,7 +1,9 @@
 :skill-icons-url: https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord
 :cpp: C++
 :em: {sp}--{sp}
-:gh-vs123: https://github.com/vs-123
+:my-gh: https://github.com/vs-123
+:repo-raw: https://raw.githubusercontent.com/vs-123/vs-123/main
+:img-c-std: {repo-raw}/c_std_int.webp
 
 = Introduction 
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
@@ -23,11 +25,11 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **WASM** {em} I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
 
-* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called {gh-vs123}/regen[regen] from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
+* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called {my-gh}/regen[regen] from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
 
 * **Go** {em} Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
 
-* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of {gh-vs123}/ystar[ystar]
+* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of {my-gh}/ystar[ystar]
 
 * **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
@@ -57,21 +59,21 @@ image::{skill-icons-url}[width=100%, align=center]
 
 == Top Projects
 
-* {gh-vs123}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
-* {gh-vs123}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*. *PLOTS AVAILABLE IN README*
-* {gh-vs123}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
-* {gh-vs123}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
-* {gh-vs123}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
-* {gh-vs123}/l-tail[l-tail] {em} A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
-* {gh-vs123}/dman[dman] {em} An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
-* {gh-vs123}/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
-* {gh-vs123}/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
-* {gh-vs123}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
-* {gh-vs123}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {gh-vs123}/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
-* {gh-vs123}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
-* {gh-vs123}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
-* {gh-vs123}/auc[auc] {em} A cross-platform auto-clicker in C99
-* {gh-vs123}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
+* {my-gh}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*. *PLOTS AVAILABLE IN README*
+* {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
+* {my-gh}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
+* {my-gh}/l-tail[l-tail] {em} A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
+* {my-gh}/dman[dman] {em} An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
+* {my-gh}/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
+* {my-gh}/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
+* {my-gh}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
+* {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
+* {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
+* {my-gh}/auc[auc] {em} A cross-platform auto-clicker in C99
+* {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
 
 == Interests
 
@@ -251,7 +253,7 @@ So our previous code seems to be consistent. But wait, most compilers and platfo
 *Question: Does PPCI break the C standard?*
 
 Let's look at how C standard defines an `int`:
-!{gh-vs123}/vs-123/blob/7d4c2b0872f05f84c4f8910fa5f1ffdd4c00f860/c_std_int.webp[C standard int]
+image:{img-c-std}[C standard int]
 
 This screenshot is from the official C standard.
 
@@ -370,11 +372,11 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 [cols="1,1",options="header"]
 |===
 | Aspect | Choice  
-| Environment | {gh-vs123}/dotfiles[My Dotfiles] 
-| Text Editor | {gh-vs123}/dotfiles/tree/main/dot_emacs[Emacs] 
+| Environment | {my-gh}/dotfiles[My Dotfiles] 
+| Text Editor | {my-gh}/dotfiles/tree/main/dot_emacs[Emacs] 
 | OS | https://voidlinux.org/[Void Linux] 
-| WM | {gh-vs123}/dotfiles/tree/main/dot_config/openbox[Openbox] 
-| Shell | {gh-vs123}/dotfiles/blob/main/dot_zshrc[Zsh]
+| WM | {my-gh}/dotfiles/tree/main/dot_config/openbox[Openbox] 
+| Shell | {my-gh}/dotfiles/blob/main/dot_zshrc[Zsh]
 |===
 
 == Statistics
