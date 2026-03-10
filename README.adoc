@@ -389,5 +389,8 @@ image::http://github-profile-summary-cards.vercel.app/api/cards/profile-details?
 
 '''
 
-image::https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=25%, align=center]
+[cols="^", frame=none, grid=none]
+|===
+| image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=25%]
+|===
 
