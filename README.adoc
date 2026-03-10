@@ -52,7 +52,6 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **LaTeX & Markdown** -- These are my tools of choice when it comes to technical documentation and making general notes
 
-
 == Top Projects
 
 * https://github.com/vs-123/regen[regen] -- A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
@@ -91,20 +90,22 @@ In addition to code, I enjoy exploring the philosophies of different software an
 [%collapsible]
 ====
 Consider the following simple C code:
-```c
+[source,c]
+----
 int add(int x, int y) {
    return x + y;
 }
 
-```
+----
 
 When we compile it with `-O3` targeting MIPS, we get this assembly:
-```as
+[source,asm]
+----
 add:
    jr     $31
    addu   $2,$4,$5
 
-```
+----
 
 Notice something interesting is going on here. It does the addition *after* returning from the function. What's going on?
 
@@ -119,11 +120,12 @@ At first glance, it looks like the function returns before it ever adds the numb
 In a general MIPS pipeline, the instruction immediately following a branch or jump is executed *before* the jump actually completes.
 
 Hence in this case, the C compiler is actually being smart here. Instead of doing something like:
-```as
+[source,asm]
+----
 addu $2,$4,$5   # (cycle 1)
 jr              # $31 (cycle 2)
 nop             # (delay slot)
-```
+----
 
 The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
 
@@ -135,7 +137,8 @@ Honestly it's pretty interesting to see how the compiler "exploits" specific har
 [%collapsible]
 ====
 Here's a simple C code
-```c
+[source,c]
+----
 int main() {
    int y = 1;
    int z = 2;
@@ -143,7 +146,7 @@ int main() {
    
    return 0;
 }
-```
+----
 
 It's pretty simple, you have an integer `x` with just the value `y + z`
 
@@ -152,7 +155,8 @@ Now let's compile this with a different C compiler. Not GCC, not Clang, we will 
 We'll compile using the flags `--std=c89 -O0` (link if you wanna see: https://c.godbolt.org/z/Wq7vcv5ec)
 
 This generates the following assembly:
-```as
+[source,asm]
+----
        section data
        section code
  main:
@@ -174,12 +178,13 @@ This generates the following assembly:
        add rsp, 24
        pop rbp
        ret
-```
+----
 
 `main:` is the `int main() {` part and `main_epilog` is the `}` part (end of `main()` function)
 
 The main interesting part I wanted to talk about is in `main_block0`, specifically this part:
-```as
+[source,asm]
+----
  ...
  main_block0:
        mov r8, 1
@@ -187,7 +192,7 @@ The main interesting part I wanted to talk about is in `main_block0`, specifical
        mov r8, 2
        mov [rbp, -16], r8
  ...
-```
+----
 
 These are our `int z` & `int y` variables. It's being stored using register `r8` as the temporary register in the stack at positions `rbp - 8` and `rbp - 16`
 
@@ -197,11 +202,12 @@ The thing is that, most compilers that target x86-64, x86, ARM, MIPS, etc. like 
 
 This means that, given a stack pointer `sp`, the variables `int z` & `int y` should have been stored in the stack register at `n` bytes away from `sp` (i.e. `sp - n`) and the other one must have been stored 4 bytes away from the last one (i.e. `sp - (n+4)`) like:
 
-```as
+[source,asm]
+----
 main:
     mov [rbp - 8], 1
     mov [rbp - 12], 2
-```
+----
 
 However, notice that in the case of PPCI, it stores them at `rbp - 8` and **`rbp - 16`** instead of `rbp - 12`. It's using offset of `8` instead of `4` bytes.
 
@@ -210,16 +216,18 @@ However, notice that in the case of PPCI, it stores them at `rbp - 8` and **`rbp
 Let's find out.
 
 Here's another C program. We'll compile it with the same compiler flags using PPCI.
-```c
+[source,c]
+----
 int main() {
    return sizeof(int);
 }
-```
+----
 
 Essentially, our `main()` function should return the size of `int`.
 
 Here's the assembly for it:
-```as
+[source,asm]
+----
        section data
        section code
  main:
@@ -231,7 +239,7 @@ Here's the assembly for it:
  main_epilog:
        pop rbp
        ret
-```
+----
 
 Notice the instruction `mov rax, 8`. That confirms that our `int` in PPCI is being treated as `8` bytes instead of the usual `4` bytes.
 
@@ -280,50 +288,56 @@ So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 [%collapsible]
 ====
 Let's take a very simple C program as follows:
-```c
+[source,c]
+----
 int main(void) {
    return 42;
 }
-```
+----
 
 Compiling this using `clang`, targetting x86-64 with the highest optimisation using `-O3`, we get:
-```asm
+[source,asm]
+----
 main:
         mov     eax, 42
         ret
-```
+----
 
 `mov eax, 42` sets `eax` to `42` and then `ret` returns it (as the program's exit code).
 
 Let's try another number.
-```c
+[source,c]
+----
 int main(void) {
    return 128;
 }
-```
+----
 
 Compiling this with the same flags as the previous one, we get:
-```asm
+[source,asm]
+----
 main:
         mov     eax, 128
         ret
-```
+----
 
 Notice that both the assemblies are pretty much identical, except the `42` changed to `128`. 
 
 Seems fair enough, let's try the usual `return 0;`. As you might expect, we're gonna get `mov eax, 0`.
-```c
+[source,c]
+----
 int main(void) {
    return 0;
 }
-```
+----
 
 Compiling this with the same setup, we get:
-```asm
+[source,asm]
+----
 main:
         xor     eax, eax
         ret
-```
+----
 
 Interesting, looks like we didn't get the `mov eax, 0` we were expecting. Instead, we got `xor eax, eax`. 
 
@@ -346,8 +360,6 @@ In addition to this, modern CPUs don't really "calculate" this `xor eax, eax` op
 There's also a side effect related to this in x86-64. The thing is that a x32 operation like `xor eax, eax` automatically zero extends to the full x64 `rax` register. This implies that `xor eax, eax` clears all 64 bits. This makes `xor eax, eax` more efficient than `xor rax, rax` because the x32 one also avoids REX prefix byte which saves even more space.
 
 What's even cooler about this is that this `xor` operation tells the CPU that `eax` no longer depends on whatever its previous value was. This actually gives the CPU a green light to perform "out of order" execution, meaning it can do its next task without having to wait for the old `eax` to retire.
-
-
 ====
 
 == Miscellaneous
@@ -359,7 +371,7 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 | Text Editor | https://github.com/vs-123/dotfiles/tree/main/dot_emacs[Emacs] 
 | OS | https://voidlinux.org/[Void Linux] 
 | WM | https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox[Openbox] 
-| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh] 
+| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh]
 |===
 
 == Statistics
@@ -373,8 +385,8 @@ image::http://github-profile-summary-cards.vercel.app/api/cards/profile-details?
 | image:http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent[Languages, width=100%]
 |===
 
----
-<p align="center">
-   <img src="https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square" width="100px"/>
-</p>
+'''
+
+[.text-center]
+image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=100%]
 
