@@ -1,4 +1,5 @@
 :skill-icons-url: https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord
+:cpp: C++
 
 = Introduction 
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
@@ -14,7 +15,7 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **C** -- C is my primary tool of choice for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
 
-* **C++** -- C++ has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
+* **{cpp}** -- {cpp} has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
 
 * **Rust** -- Rust used to be my daily-driver. Rust had shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
 
