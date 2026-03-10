@@ -53,21 +53,21 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 
 == Top Projects
 
-* https://github.com/vs-123/regen[regen] -- A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
-* https://github.com/vs-123/ystar[ystar] -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
-* https://github.com/vs-123/bpvm[bpvm] -- A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
-* https://github.com/vs-123/halloc[halloc] -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
-* https://github.com/vs-123/barc[barc] -- A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
-* https://github.com/vs-123/l-tail[l-tail] -- A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
-* https://github.com/vs-123/dman[dman] -- An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
-* https://github.com/vs-123/qenv[qenv] -- A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
-* https://github.com/vs-123/mbf[mbf] -- A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of **macros**
-* https://github.com/vs-123/dstr[dstr] -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
-* https://github.com/vs-123/minesweeper-c[mswpr] -- Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar] PRNG for mine generation and placement. **Screenshots available in README**
-* https://github.com/vs-123/kernel[kernel] -- A dead-simple kernel written in C99 with LLVM toolchain
-* https://github.com/vs-123/tegen[tegen] -- A recursive, stochastic text generator for Rust
-* https://github.com/vs-123/auc[auc] -- A cross-platform auto-clicker in C99
-* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme] -- Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
+* https://github.com/vs-123/regen[regen,window=_blank] -- A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
+* https://github.com/vs-123/ystar[ystar,window=_blank] -- A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
+* https://github.com/vs-123/bpvm[bpvm,window=_blank] -- A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher,window=_blank] VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
+* https://github.com/vs-123/halloc[halloc,window=_blank] -- A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
+* https://github.com/vs-123/barc[barc,window=_blank] -- A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
+* https://github.com/vs-123/l-tail[l-tail,window=_blank] -- A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
+* https://github.com/vs-123/dman[dman,window=_blank] -- An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
+* https://github.com/vs-123/qenv[qenv,window=_blank] -- A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
+* https://github.com/vs-123/mbf[mbf,window=_blank] -- A custom https://en.wikipedia.org/wiki/Brainfuck[BF,window=_blank] implementation, with the addition of **macros**
+* https://github.com/vs-123/dstr[dstr,window=_blank] -- A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
+* https://github.com/vs-123/minesweeper-c[mswpr,window=_blank] -- Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar,window=_blank] PRNG for mine generation and placement. **Screenshots available in README**
+* https://github.com/vs-123/kernel[kernel,window=_blank] -- A dead-simple kernel written in C99 with LLVM toolchain
+* https://github.com/vs-123/tegen[tegen,window=_blank] -- A recursive, stochastic text generator for Rust
+* https://github.com/vs-123/auc[auc,window=_blank] -- A cross-platform auto-clicker in C99
+* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme,window=_blank] -- Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
 
 == Interests
 
@@ -238,7 +238,7 @@ So our previous code seems to be consistent. But wait, most compilers and platfo
 **Question: Does PPCI break the C standard?**
 
 Let's look at how C standard defines an `int`:
-!https://github.com/vs-123/vs-123/blob/7d4c2b0872f05f84c4f8910fa5f1ffdd4c00f860/c_std_int.webp[C standard int]
+!https://github.com/vs-123/vs-123/blob/7d4c2b0872f05f84c4f8910fa5f1ffdd4c00f860/c_std_int.webp[C standard int,window=_blank]
 
 This screenshot is from the official C standard.
 
@@ -352,11 +352,11 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 
 | Aspect | Choice  |
 | :--- | :--- |
-| Environment | https://github.com/vs-123/dotfiles[My Dotfiles] |
-| Text Editor | https://github.com/vs-123/dotfiles/tree/main/dot_emacs[Emacs] |
-| OS | https://voidlinux.org/[Void Linux] |
-| WM | https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox[Openbox] |
-| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh] |
+| Environment | https://github.com/vs-123/dotfiles[My Dotfiles,window=_blank] |
+| Text Editor | https://github.com/vs-123/dotfiles/tree/main/dot_emacs[Emacs,window=_blank] |
+| OS | https://voidlinux.org/[Void Linux,window=_blank] |
+| WM | https://github.com/vs-123/dotfiles/tree/main/dot_config/openbox[Openbox,window=_blank] |
+| Shell | https://github.com/vs-123/dotfiles/blob/main/dot_zshrc[Zsh,window=_blank] |
 
 == Statistics
 ![](http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent)
