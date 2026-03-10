@@ -1,6 +1,6 @@
 :skill-icons-url: https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord
 :cpp: C++
-:em: {sp}\--{sp}
+:em: {sp}--{sp}
 
 = Introduction 
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
