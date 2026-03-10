@@ -389,8 +389,8 @@ image::http://github-profile-summary-cards.vercel.app/api/cards/profile-details?
 
 '''
 
-[cols="^", frame=none, grid=none, width=100%]
-|===
-| image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=100%]
-|===
+// github being a slop with adoc
+pass:[<p align="center">] 
+image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=100%]
+pass:[</p>]
 
