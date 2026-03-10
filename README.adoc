@@ -73,7 +73,7 @@ image::{skill-icons-url}[width=100%, align=center]
 * {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
-* {my-gh}/auc[auc] {em} A cross-platform auto-clicker in C99
+* {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
 * {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
 
 == Interests
