@@ -379,7 +379,7 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 == Statistics
 
 pass:[<p align="center">] 
-image:http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent[Profile Details]
+image:http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent[Profile Details, width=100%]
 pass:[</p>]
 
 pass:[<div align="center">]
