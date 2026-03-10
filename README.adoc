@@ -382,20 +382,13 @@ pass:[<p align="center">]
 image:http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent[Profile Details]
 pass:[</p>]
 
-pass:[
-<div align="center">
-  <table width="100%" style="max-width: 800px;">
-    <tr>
-      <td align="center">
-        <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent" width="100%">
-      </td>
-      <td align="center">
-        <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent" width="100%">
-      </td>
-    </tr>
-  </table>
-</div>
-]
+pass:[<div align="center">]
+
+image:http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent[Stats, width=48%]
+image:http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent[Languages, width=48%]
+
+pass:[</div>]
+
 
 '''
 
