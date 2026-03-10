@@ -5,7 +5,8 @@
 :repo-raw: https://raw.githubusercontent.com/vs-123/vs-123/main
 :img-c-std: {repo-raw}/c_std_int.webp
 
-= Introduction 
+= Introduction
+
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
 
 C is my primary language of choice with a specific fondness for C99. I appreciate its efficiency and the granular control it offers over machine state, and I find its philosophy aligns perfectly with my interest in building lean & transparent systems.
