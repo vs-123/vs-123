@@ -383,12 +383,12 @@ image::http://github-profile-summary-cards.vercel.app/api/cards/profile-details?
 
 [cols="1,1", frame=none, grid=none]
 |===
-| image::http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent[Stats, width=100%]
-| image::http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent[Languages, width=100%]
+| image:http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent[Stats, width=100%]
+| image:http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent[Languages, width=100%]
 |===
 
 '''
 
 [.text-center]
-image::https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=25%]
+image::https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=25%, align=center]
 
