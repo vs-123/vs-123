@@ -87,9 +87,9 @@ In addition to code, I enjoy exploring the philosophies of different software an
 
 == Interesting Observations
 
-<details>
-<summary>MIPS Compiler Magic: Branch Delay Slot</summary>
-
+.MIPS Compiler Magic: Branch Delay Slot
+[%collapsible]
+====
 Consider the following simple C code:
 ```c
 int add(int x, int y) {
@@ -129,11 +129,11 @@ The compiler actually reorders the instructions so that the addition happens INS
 
 Honestly it's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies
 
-</details>
+====
 
-<details>
-<summary>PPCI Compiler</summary>
-
+.PPCI Compiler
+[%collapsible]
+====
 Here's a simple C code
 ```c
 int main() {
@@ -274,11 +274,11 @@ This is actually perfect because an x64 CPU prefers to read data in chunks of 8 
 
 So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 
-</details>
+====
 
-<details>
-<summary>Why XOR EAX, EAX?</summary>
-
+.Why XOR EAX, EAX?
+[%collapsible]
+====
 Let's take a very simple C program as follows:
 ```c
 int main(void) {
@@ -348,7 +348,7 @@ There's also a side effect related to this in x86-64. The thing is that a x32 op
 What's even cooler about this is that this `xor` operation tells the CPU that `eax` no longer depends on whatever its previous value was. This actually gives the CPU a green light to perform "out of order" execution, meaning it can do its next task without having to wait for the old `eax` to retire.
 
 
-</details>
+====
 
 == Miscellaneous
 
