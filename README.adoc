@@ -390,5 +390,5 @@ image::http://github-profile-summary-cards.vercel.app/api/cards/profile-details?
 '''
 
 [.text-center]
-image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=100%]
+image:https://komarev.com/ghpvc/?username=vs-123&color=grey&style=flat-square[Views, width=25%]
 
