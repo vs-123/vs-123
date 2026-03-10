@@ -22,11 +22,11 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **WASM** {em} I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
 
-* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called [regen](https://github.com/vs-123/regen) from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
+* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called https://github.com/vs-123/regen[regen] from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
 
 * **Go** {em} Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
 
-* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of [ystar](https://github.com/vs-123/ystar)
+* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of https://github.com/vs-123/ystar[ystar]
 
 * **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
@@ -34,7 +34,7 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **Haskell** {em} Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
 
-* **HTML5, CSS, JS** {em} These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to **Electron**, which had piqued my interest in GUI application development.
+* **HTML5, CSS, JS** {em} These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to *Electron*, which had piqued my interest in GUI application development.
 
 * **TypeScript** {em} TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
 
@@ -57,20 +57,20 @@ image::{skill-icons-url}[width=100%, align=center]
 == Top Projects
 
 * https://github.com/vs-123/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
-* https://github.com/vs-123/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 **with my own custom constants**, tested and verified with various statistical tests including **Wald-Wolfowitz Runs Test** and **Lag-1 Correlation Test**. **PLOTS AVAILABLE IN README**
-* https://github.com/vs-123/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. **SCREENSHOTS AVAILABLE IN README**
+* https://github.com/vs-123/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*. *PLOTS AVAILABLE IN README*
+* https://github.com/vs-123/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
 * https://github.com/vs-123/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
 * https://github.com/vs-123/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
 * https://github.com/vs-123/l-tail[l-tail] {em} A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
 * https://github.com/vs-123/dman[dman] {em} An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
 * https://github.com/vs-123/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
-* https://github.com/vs-123/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of **macros**
+* https://github.com/vs-123/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
 * https://github.com/vs-123/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
-* https://github.com/vs-123/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar] PRNG for mine generation and placement. **Screenshots available in README**
+* https://github.com/vs-123/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own https://github.com/vs-123/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
 * https://github.com/vs-123/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * https://github.com/vs-123/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * https://github.com/vs-123/auc[auc] {em} A cross-platform auto-clicker in C99
-* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. **Screenshots available in README**
+* https://github.com/vs-123/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
 
 == Interests
 
@@ -211,9 +211,9 @@ main:
     mov [rbp - 12], 2
 ----
 
-However, notice that in the case of PPCI, it stores them at `rbp - 8` and **`rbp - 16`** instead of `rbp - 12`. It's using offset of `8` instead of `4` bytes.
+However, notice that in the case of PPCI, it stores them at `rbp - 8` and *`rbp - 16`* instead of `rbp - 12`. It's using offset of `8` instead of `4` bytes.
 
-**Question: Does PPCI treat `ints` as 8 bytes instead of 4?**
+*Question: Does PPCI treat `ints` as 8 bytes instead of 4?*
 
 Let's find out.
 
@@ -247,7 +247,7 @@ Notice the instruction `mov rax, 8`. That confirms that our `int` in PPCI is bei
 
 So our previous code seems to be consistent. But wait, most compilers and platforms use 4 bytes for an `int`, PPCI is using 8 bytes. Does this mean PPCI is breaking the C standard?
 
-**Question: Does PPCI break the C standard?**
+*Question: Does PPCI break the C standard?*
 
 Let's look at how C standard defines an `int`:
 !https://github.com/vs-123/vs-123/blob/7d4c2b0872f05f84c4f8910fa5f1ffdd4c00f860/c_std_int.webp[C standard int]
