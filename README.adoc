@@ -214,9 +214,9 @@ main:
     mov [rbp - 12], 2
 ----
 
-However, notice that in the case of PPCI, it stores them at `rbp - 8` and *`rbp - 16`* instead of `rbp - 12`. It's using offset of `8` instead of `4` bytes.
+However, notice that in the case of PPCI, it stores them at `rbp - 8` and `rbp - 16` instead of `rbp - 12`. The key thing here is that it's using an offset of `8` bytes instead of `4` bytes.
 
-*Question: Does PPCI treat `ints` as 8 bytes instead of 4?*
+*Question: Does PPCI treat `int`s as 8 bytes instead of 4?*
 
 Let's find out.
 
