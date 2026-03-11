@@ -65,6 +65,7 @@ image::{skill-icons-url}[width=100%, align=center]
 +
 --
 **Highlights:**
+
 ** *Transactional Backtracking* {em} Uses a local "undo log" for each recursion depth to ensure integrity of captures and prevent "dirty" states.
 ** *Full Lookarounds* {em} Supports Positive/Negative Lookahead `(?=...)` and Lookbehind `(?<=...)`.
 ** *Backreferences* {em} Supports `\1` through `\9` with implemented safety checks to avoid infinite recursion in nested patterns.
