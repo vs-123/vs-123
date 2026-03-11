@@ -191,9 +191,9 @@ In a general MIPS pipeline, the instruction immediately following a branch or ju
 Hence in this case, the C compiler is actually being smart here. Instead of doing something like:
 [source,asm]
 ----
-addu $2,$4,$5   # (cycle 1)
+addu $2,$4,$5   #     (cycle 1)
 jr              # $31 (cycle 2)
-nop             # (delay slot)
+nop             #     (delay slot)
 ----
 
 The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
