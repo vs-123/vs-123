@@ -62,10 +62,40 @@ image::{skill-icons-url}[width=100%, align=center]
 == Top Projects
 
 * {my-gh}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
-* {my-gh}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*. *PLOTS AVAILABLE IN README*
++
+--
+**Highlights:**
+* **Transactional Backtracking** {em} Uses a local "undo log" for each recursion depth to ensure integrity of captures and prevent "dirty" states.
+* **Full Lookarounds** {em} Supports Positive/Negative Lookahead `(?=...)` and Lookbehind `(?<=...)`.
+* **Backreferences** {em} Supports `\1` through `\9` with implemented safety checks to avoid infinite recursion in nested patterns.
+* **Zero Third Party Dependencies** {em} Pure Standard C99 logic, no external libraries used.
+--
++
+.View Syntax Support (click to expand)
+[%collapsible]
+====
+[cols="1,2,3",options="header"]
+|===
+| SYNTAX | TERMINOLOGY | DESCRIPTION
+| `^` | **START OF STRING** | Matches only at the absolute beginning
+| `$` | **END OF STRING** | Matches only at the very end
+| `.` | **WILDCARDS** | Matches any single character
+| `*`, `+`, `?` | **QUANTIFIERS** | Greedy: zero/one or more occurrences
+| `*?`, `+?` | **NON-GREEDY** | Matches the minimum required
+| `\|` | **OR OPERATOR** | Match first pattern or the other, chainable
+| `(...)` | **CAPTURE GROUPS** | Group & extract sub-matches (can be nested)
+| `(?:...)` | **NON-CAPTURE** | Groups without saving to capture array
+| `\1`, `\2` | **BACKREFERENCES** | Matches exact text of a previous group
+| `(?=...)` | **LOOKAHEAD** | Match only if the pattern follows
+| `(?<=...)` | **LOOKBEHIND** | Match only if the pattern precedes
+| `\d`, `\s`, `\w` | **SHORTHANDS** | Digits, Whitespace, Alphanumeric
+| `\b` | **BOUNDARY** | Word boundary
+|===
+====
+* {my-gh}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*.
 +
 image::{my-gh-raw}/ystar/refs/heads/main/prng_analysis.png[ystar Plot, width=450]
-* {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. 
 +
 image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=75%]
 +
@@ -87,13 +117,13 @@ image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png
 * {my-gh}/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
 * {my-gh}/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
 * {my-gh}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
-* {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement.
 +
 image::{my-gh-raw}/minesweeper-c/refs/heads/main/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
-* {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
+* {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. 
 +
 image::{my-gh-raw}/royal-hemlock-theme/refs/heads/main/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
 
