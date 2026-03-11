@@ -63,13 +63,11 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * {my-gh}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
 +
---
 **Highlights:**
 * **Transactional Backtracking** {em} Uses a local "undo log" for each recursion depth to ensure integrity of captures and prevent "dirty" states.
 * **Full Lookarounds** {em} Supports Positive/Negative Lookahead `(?=...)` and Lookbehind `(?<=...)`.
 * **Backreferences** {em} Supports `\1` through `\9` with implemented safety checks to avoid infinite recursion in nested patterns.
 * **Zero Third Party Dependencies** {em} Pure Standard C99 logic, no external libraries used.
---
 +
 .View Syntax Support (click to expand)
 [%collapsible]
@@ -186,7 +184,9 @@ nop             # (delay slot)
 
 The compiler actually reorders the instructions so that the addition happens INSIDE the jump's delay slot. It essentially hides the cost of the addition within the time the processor spends resolving the jump. We get our result in what feels like a single operation.
 
-Honestly it's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies
+This optimisation effectively reduces the branch penalty to zero cycles. This is a crucial feature in early RISC architectures where every pipeline stall was an expensive performance hit.
+
+Honestly it's pretty interesting to see how the compiler "exploits" specific hardware quirks like this to strip off potential inefficiencies.
 
 ====
 
