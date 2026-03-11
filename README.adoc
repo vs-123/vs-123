@@ -178,6 +178,7 @@ add:
 Notice something interesting is going on here. It does the addition *after* returning from the function. What's going on?
 
 Just FYI:
+
 * `$31` is the return address (RA).
 * `$2` holds the return value (V0).
 * `$4` and `$5` are arguments `x` and `y`.
