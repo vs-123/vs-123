@@ -318,7 +318,7 @@ So our previous code seems to be consistent. But wait, most compilers and platfo
 *Question: Does PPCI break the C standard?*
 
 Let's look at how C standard defines an `int`:
-image:{vs-123-repo}[C Standard Int]
+image:{vs-123-repo}/c_std_int.webp[C Standard Int]
 
 This screenshot is from the official C standard.
 
