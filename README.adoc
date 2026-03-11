@@ -144,7 +144,7 @@ In addition to code, I enjoy exploring the philosophies of different software an
 
 == Interesting Observations
 
-.MIPS Compiler Magic: Branch Delay Slot
+.*MIPS Compiler Magic {em} Branch Delay Slot* (click to expand)
 [%collapsible]
 ====
 Consider the following simple C code:
@@ -193,7 +193,7 @@ Honestly it's pretty interesting to see how the compiler "exploits" specific har
 
 ====
 
-.PPCI Compiler
+.*PPCI Compiler* (click to expand)
 [%collapsible]
 ====
 Here's a simple C code
@@ -344,7 +344,7 @@ So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 
 ====
 
-.Why XOR EAX, EAX?
+.*Why XOR EAX, EAX?* (click to expand)
 [%collapsible]
 ====
 Let's take a very simple C program as follows:
