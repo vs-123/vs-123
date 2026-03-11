@@ -72,7 +72,7 @@ image::{skill-icons-url}[width=100%, align=center]
 ** *Zero Third Party Dependencies* {em} Pure Standard C99 logic, no external libraries used.
 --
 +
-.View Syntax Support (click to expand)
+.*Syntax Support* (click to expand)
 [%collapsible]
 ====
 [cols="1,2,3",options="header"]
@@ -100,7 +100,7 @@ image::{my-gh-raw}/ystar/refs/heads/main/prng_analysis.png[ystar Plot, width=450
 +
 image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=75%]
 +
-.More Screenshots (click to expand)
+.*More Screenshots* (click to expand)
 [%collapsible]
 ====
 image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/invert_loop_sine_bpvm_vs123.png[Invert Loop Sine, width=75%]
