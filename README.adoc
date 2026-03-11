@@ -5,6 +5,10 @@
 :my-gh-raw: https://raw.githubusercontent.com/vs-123
 :repo-raw: {my-gh-raw}/vs-123/main
 :img-c-std: {repo-raw}/c_std_int.webp
+:ystar-repo: {my-gh-raw}/ystar/refs/heads/main
+:bpvm-repo: {my-gh-raw}/bpvm/refs/heads/main
+:mswpr-repo: {my-gh-raw}/minesweeper-c/refs/heads/main
+:royal-hemlock-repo: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
 
 = Introduction
 
@@ -95,21 +99,21 @@ image::{skill-icons-url}[width=100%, align=center]
 ====
 * {my-gh}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*.
 +
-image::{my-gh-raw}/ystar/refs/heads/main/prng_analysis.png[ystar Plot, width=450]
+image::{ystar-repo}/prng_analysis.png[ystar Plot, width=450]
 * {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. 
 +
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=75%]
+image::{bpvm-repo}/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=75%]
 +
 .*More Screenshots* (click to expand)
 [%collapsible]
 ====
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/invert_loop_sine_bpvm_vs123.png[Invert Loop Sine, width=75%]
+image::{bpvm-repo}/screenshots/invert_loop_sine_bpvm_vs123.png[Invert Loop Sine, width=75%]
 
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/kb_test_bpvm_vs123.png[Keboard Test, width=75%]
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/nyan_cat_bpvm_vs123.png[Nyan Cat, width=75%]
+image::{bpvm-repo}/screenshots/kb_test_bpvm_vs123.png[Keyboard Test, width=75%]
+image::{bpvm-repo}/screenshots/nyan_cat_bpvm_vs123.png[Nyan Cat, width=75%]
 
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/scrolling_logo_bpvm_vs123.png[Scrolling Logo, width=75%]
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png[Sine Scroller, width=75%]
+image::{bpvm-repo}/screenshots/scrolling_logo_bpvm_vs123.png[Scrolling Logo, width=75%]
+image::{bpvm-repo}/screenshots/sine_scroller_bpvm_vs123.png[Sine Scroller, width=75%]
 ====
 * {my-gh}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
 * {my-gh}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
@@ -120,13 +124,13 @@ image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png
 * {my-gh}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
 * {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement.
 +
-image::{my-gh-raw}/minesweeper-c/refs/heads/main/assets/screenshot.png[mswpr Screenshot, width=75%]
+image::{mswpr-repo}/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
 * {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. 
 +
-image::{my-gh-raw}/royal-hemlock-theme/refs/heads/main/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
+image::{royal-hemlock-repo}/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
 
 == Interests
 
@@ -212,7 +216,7 @@ It's pretty simple, you have an integer `x` with just the value `y + z`
 
 Now let's compile this with a different C compiler. Not GCC, not Clang, we will use the ppci compiler.
 
-We'll compile using the flags `--std=c89 -O0` (link if you wanna see: https://c.godbolt.org/z/Wq7vcv5ec)
+We'll compile using the flags `--std=c89 -O0` (link {em} https://c.godbolt.org/z/Wq7vcv5ec)
 
 This generates the following assembly:
 [source,asm]
