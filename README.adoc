@@ -64,10 +64,10 @@ image::{skill-icons-url}[width=100%, align=center]
 * {my-gh}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
 +
 **Highlights:**
-* **Transactional Backtracking** {em} Uses a local "undo log" for each recursion depth to ensure integrity of captures and prevent "dirty" states.
-* **Full Lookarounds** {em} Supports Positive/Negative Lookahead `(?=...)` and Lookbehind `(?<=...)`.
-* **Backreferences** {em} Supports `\1` through `\9` with implemented safety checks to avoid infinite recursion in nested patterns.
-* **Zero Third Party Dependencies** {em} Pure Standard C99 logic, no external libraries used.
+** *Transactional Backtracking* {em} Uses a local "undo log" for each recursion depth to ensure integrity of captures and prevent "dirty" states.
+** *Full Lookarounds* {em} Supports Positive/Negative Lookahead `(?=...)` and Lookbehind `(?<=...)`.
+** *Backreferences* {em} Supports `\1` through `\9` with implemented safety checks to avoid infinite recursion in nested patterns.
+** *Zero Third Party Dependencies* {em} Pure Standard C99 logic, no external libraries used.
 +
 .View Syntax Support (click to expand)
 [%collapsible]
