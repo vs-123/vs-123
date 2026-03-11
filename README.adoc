@@ -2,7 +2,8 @@
 :cpp: C++
 :em: {sp}--{sp}
 :my-gh: https://github.com/vs-123
-:repo-raw: https://raw.githubusercontent.com/vs-123/vs-123/main
+:my-gh-raw: https://raw.githubusercontent.com/vs-123
+:repo-raw: {my-gh-raw}/vs-123/main
 :img-c-std: {repo-raw}/c_std_int.webp
 
 = Introduction
@@ -62,6 +63,8 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * {my-gh}/regen[regen] {em} A PCRE-compatible, regular-expressions engine written in C99. Supports various features including capture groups, backreferences, zero-width lookaround assertions, character classes, and more. No external libraries were used
 * {my-gh}/ystar[ystar] {em} A xorshift64* PRNG implementation in C99 *with my own custom constants*, tested and verified with various statistical tests including *Wald-Wolfowitz Runs Test* and *Lag-1 Correlation Test*. *PLOTS AVAILABLE IN README*
++
+image::{my-gh-raw}/ystar/refs/heads/main/prng_analysis.png[ystar Plot, width=450]
 * {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
 * {my-gh}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
 * {my-gh}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
