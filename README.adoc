@@ -1,14 +1,20 @@
 :skill-icons-url: https://skillicons.dev/icons?i=c,cpp,rust,py,go,haskell,lua,html,css,js,ts,wasm,latex,md,regex,cmake,docker,electron,git,githubactions,linux,bsd,vim,neovim,emacs,discord
 :cpp: C++
 :em: {sp}--{sp}
+
+// base links
+:gh-profile-sum: http://github-profile-summary-cards.vercel.app/api/cards
+
+// github base links
 :my-gh: https://github.com/vs-123
 :my-gh-raw: https://raw.githubusercontent.com/vs-123
-:repo-raw: {my-gh-raw}/vs-123/main
-:img-c-std: {repo-raw}/c_std_int.webp
+
+// raw repo links
 :ystar-repo: {my-gh-raw}/ystar/refs/heads/main
 :bpvm-repo: {my-gh-raw}/bpvm/refs/heads/main
 :mswpr-repo: {my-gh-raw}/minesweeper-c/refs/heads/main
 :royal-hemlock-repo: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
+:vs-123-repo: {my-gh-raw}/vs-123/main
 
 = Introduction
 
@@ -312,7 +318,7 @@ So our previous code seems to be consistent. But wait, most compilers and platfo
 *Question: Does PPCI break the C standard?*
 
 Let's look at how C standard defines an `int`:
-image:{img-c-std}[C standard int]
+image:{vs-123-repo}[C Standard Int]
 
 This screenshot is from the official C standard.
 
@@ -441,16 +447,15 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 == Statistics
 
 pass:[<p align="center">] 
-image:http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=vs-123&theme=transparent[Profile Details, width=100%]
+image:{gh-profile-sum}/profile-details?username=vs-123&theme=transparent[Profile Details, width=100%]
 pass:[</p>]
 
 pass:[<div align="center">]
 
-image:http://github-profile-summary-cards.vercel.app/api/cards/stats?username=vs-123&theme=transparent[Stats, width=48%]
-image:http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=vs-123&theme=transparent[Languages, width=48%]
+image:{gh-profile-sum}/stats?username=vs-123&theme=transparent[Stats, width=48%]
+image:{gh-profile-sum}/most-commit-language?username=vs-123&theme=transparent[Languages, width=48%]
 
 pass:[</div>]
-
 
 '''
 
