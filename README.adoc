@@ -88,10 +88,14 @@ image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png
 * {my-gh}/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
 * {my-gh}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
 * {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement. *SCREENSHOTS AVAILABLE IN README*
++
+image::{my-gh-raw}/minesweeper-c/refs/heads/main/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
 * {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. *SCREENSHOTS AVAILABLE IN README*
++
+image::{my-gh-raw}/royal-hemlock-theme/refs/heads/main/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
 
 == Interests
 
