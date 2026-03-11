@@ -67,18 +67,18 @@ image::{skill-icons-url}[width=100%, align=center]
 image::{my-gh-raw}/ystar/refs/heads/main/prng_analysis.png[ystar Plot, width=450]
 * {my-gh}/bpvm[bpvm] {em} A simple, fully-functional https://esolangs.org/wiki/BytePusher[BytePusher] VM implementation in C99. *SCREENSHOTS AVAILABLE IN README*
 +
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=450]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/colour_palette_bpvm_vs123.png[BPVM Colour Palette Screenshot, width=75%]
 +
 .More Screenshots (click to expand)
 [%collapsible]
 ====
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/invert_loop_sine_bpvm_vs123.png[Invert Loop Sine, width=100%]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/invert_loop_sine_bpvm_vs123.png[Invert Loop Sine, width=75%]
 
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/kb_test_bpvm_vs123.png[Keboard Test, width=100%]
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/nyan_cat_bpvm_vs123.png[Nyan Cat, width=100%]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/kb_test_bpvm_vs123.png[Keboard Test, width=75%]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/nyan_cat_bpvm_vs123.png[Nyan Cat, width=75%]
 
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/scrolling_logo_bpvm_vs123.png[Scrolling Logo, width=100%]
-image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png[Sine Scroller, width=100%]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/scrolling_logo_bpvm_vs123.png[Scrolling Logo, width=75%]
+image::{my-gh-raw}/bpvm/refs/heads/main/screenshots/sine_scroller_bpvm_vs123.png[Sine Scroller, width=75%]
 ====
 * {my-gh}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
 * {my-gh}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
