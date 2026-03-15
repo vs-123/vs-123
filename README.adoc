@@ -16,6 +16,10 @@
 :royal-hemlock-repo-raw: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
 :vs-123-repo-raw: {my-gh-raw}/vs-123/main
 
+// i switch between the two as my daily driver pretty often
+ifdef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_emacs[Emacs]]
+ifndef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_config/nvim/[Neovim]]
+
 = Introduction
 
 Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
@@ -439,7 +443,7 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 |===
 | Aspect | Choice  
 | Environment | {my-gh}/dotfiles[My Dotfiles] 
-| Text Editor | {my-gh}/dotfiles/tree/main/dot_emacs[Emacs] 
+| Text Editor | {editor-link}
 | OS | https://voidlinux.org/[Void Linux] 
 | WM | {my-gh}/dotfiles/tree/main/dot_config/openbox[Openbox] 
 | Shell | {my-gh}/dotfiles/blob/main/dot_zshrc[Zsh]
