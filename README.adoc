@@ -50,7 +50,7 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
-* **ELisp** {em} I really enjoy LISP languages. I use ELisp primarily for my Emacs configuration. 
+* **Emacs Lisp** {em} I really enjoy LISP languages. I use Emacs Lisp primarily for my Emacs configuration. 
 
 * **Haskell** {em} Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
 
