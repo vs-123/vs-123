@@ -13,7 +13,8 @@
 :ystar-repo-raw: {my-gh-raw}/ystar/refs/heads/main
 :bpvm-repo-raw: {my-gh-raw}/bpvm/refs/heads/main
 :mswpr-repo-raw: {my-gh-raw}/minesweeper-c/refs/heads/main
-:royal-hemlock-repo-raw: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
+:royal-hemlock-emacs-repo-raw: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
+:royal-hemlock-nvim-repo-raw: {my-gh-raw}/royal-hemlock-nvim/refs/heads/main
 :vs-123-repo-raw: {my-gh-raw}/vs-123/main
 
 // i switch between the two as my daily driver pretty often
@@ -138,9 +139,10 @@ image::{mswpr-repo-raw}/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
-* {my-gh}/royal-hemlock-theme[Royal Hemlock Theme] {em} Soothing royal-blue light-theme for Emacs. 
+* {my-gh}/royal-hemlock[Royal Hemlock Meta-Repo] {em} Soothing royal-blue light-theme for Emacs and Neovim.
 +
-image::{royal-hemlock-repo-raw}/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
+image:{royal-hemlock-emacs-repo-raw}/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
+image:{royal-hemlock-nvim-repo-raw}/royal-hemlock-theme-ss.png[Royal Hemlock Neovim, width=75%]
 
 == Interests
 
