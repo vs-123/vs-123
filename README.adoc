@@ -137,12 +137,8 @@ image::{mswpr-repo-raw}/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
 * {my-gh}/royal-hemlock[Royal Hemlock Meta-Repo] {em} Soothing royal-blue light-theme for Emacs and Neovim.
 +
-pass:[<div align="center">]
-+
 image:{royal-hemlock-emacs-repo-raw}/royal-hemlock-theme.png[Royal Hemlock Theme, width=48%]
 image:{royal-hemlock-nvim-repo-raw}/royal-hemlock-theme-ss.png[Royal Hemlock Neovim, width=48%]
-+
-pass:[</div>]
 
 == Interests
 
