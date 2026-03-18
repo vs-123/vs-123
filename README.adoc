@@ -61,9 +61,9 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **Vim** {em} Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
 
-* **Emacs** {em} Emacs is my daily-driver as a text editor. I enjoy its highly customisable nature. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
+* **Emacs** {em} I enjoy the highly customisable nature of Emacs. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
 
-* **Neovim** {em} Neovim used to be my text editor of choice. I used to use it for programming most of my projects. For quick edits however I use `ed`
+* **Neovim** {em} I enjoy the idea that I can use Lua to customise Vim over using Vimscript, although I tend to use a bit of both. I enjoy using it for programming most of my projects. For certain, quick edits however I use `ed`
 
 * **CMake** {em} CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
 
@@ -71,7 +71,7 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **CI/CD & Docker** {em} I utilise GitHub actions and Docker to automate the testing of my projects across different environments, and also to streamline binary distribution
 
-* **LaTeX & Markdown** {em} These are my tools of choice when it comes to technical documentation and making general notes
+* **LaTeX & Markdown** {em} These are my tools of choice when it comes to technical documentation and making general notes. However, I tend to prefer https://asciidoc.org/[AsciiDoc] over Markdown due to its ability to modularise and reuse content. This README too, is written in AsciiDoc and not Markdown
 
 == Top Projects
 
