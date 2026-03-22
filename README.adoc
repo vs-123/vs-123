@@ -4,6 +4,7 @@
 
 // base links
 :gh-profile-sum: http://github-profile-summary-cards.vercel.app/api/cards
+:bf-link: https://en.wikipedia.org/wiki/Brainfuck
 
 // github base links
 :my-gh: https://github.com/vs-123
@@ -131,11 +132,12 @@ image::{bpvm-repo-raw}/screenshots/sine_scroller_bpvm_vs123.png[Sine Scroller, w
 +
 image::{cchat-repo-raw}/assets/cchat-client-1.png[cchat Screenshot, width=75%]
 * {my-gh}/halloc[halloc] {em} A dead-simple, thread-safe, general-purpose, explicit-freelist heap allocator library written in C99
+* {my-gh}/cbot[cbot] {em} A simple discord bot written in pure C99. Maintains a maximum resident set size between `11.6MB` to `11.8MB`, a native link:{bf-link}[BF] interpreter that is resistant to infinite loops, memory exhaustion and out of bound errors, and a simple banking system with persistence. Implements a flat-file banking architecture for state persistence in order to avoid the overhead and black box nature of traditional database engines whilst keeping it reasonably simple to switch to a binary-based format in case it ever becomes a bottleneck. Race conditions related to bank persistence are mathematically impossible by design, visit the repository to learn more.
 * {my-gh}/barc[barc] {em} A lexicographical permutation-based BWT + local frequency-adaptive MTF transform + multi-byte chunked RLE file-compressor archive utility tool written in C99. This project uses no OS-specific/POSIX/external libraries in order to keep it portable
 * {my-gh}/l-tail[l-tail] {em} A memory-efficient, POSIX-compliant, high-performance, log-scanning utility tool for stream monitoring written in C99.
 * {my-gh}/dman[dman] {em} An efficient, POSIX-compliant, policy-based directory-pruning utility tool written in C99
 * {my-gh}/qenv[qenv] {em} A simple, POSIX-compliant, zero-dependency environment variable inspection utility tool designed for quick and memory-efficient filtering across diverse shell environments.
-* {my-gh}/mbf[mbf] {em} A custom https://en.wikipedia.org/wiki/Brainfuck[BF] implementation, with the addition of *macros*
+* {my-gh}/mbf[mbf] {em} A custom link:{bf-link}[BF] implementation, with the addition of *macros*
 * {my-gh}/dstr[dstr] {em} A dead-simple dynamic-string library written in C89. Supports printf-style formatters for string concatenation, written from scratch
 * {my-gh}/minesweeper-c[mswpr] {em} Fully functional Minesweeper implementation in C99, using my own {my-gh}/ystar[ystar] PRNG for mine generation and placement.
 +
@@ -620,7 +622,6 @@ Congratulations, you can now read GCC, Clang and MSVC mangled symbols!
 So yeah, name mangling is an interesting concept in {cpp} that lets you have multiple functions with the same name.
 
 ====
-
 
 == Miscellaneous
 
