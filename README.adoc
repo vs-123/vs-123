@@ -40,23 +40,17 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **{cpp}** {em} {cpp} has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
 
-* **Rust** {em} Rust used to be my daily-driver. Rust had shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
+* **Rust** {em} Rust shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
 
 * **WASM** {em} I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
 
 * **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called {my-gh}/regen[regen] from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
 
-* **Go** {em} Go is my favourite high-level language. I enjoy the minimalism and simplicity it offers to me along with its C-ish vibes. I use it for systems involving networking
-
 * **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of {my-gh}/ystar[ystar]
 
 * **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
 
-* **Emacs Lisp** {em} I really enjoy LISP languages. I use Emacs Lisp primarily for my Emacs configuration. 
-
 * **Haskell** {em} Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
-
-* **HTML5, CSS, JS** {em} These languages have been my entry point into programming. JavaScript is the first programming language I've learnt. These foundations have also eventually led me to *Electron*, which had piqued my interest in GUI application development.
 
 * **TypeScript** {em} TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
 
@@ -69,10 +63,6 @@ image::{skill-icons-url}[width=100%, align=center]
 * **Neovim** {em} I enjoy the idea that I can use Lua to customise Vim over using Vimscript, although I tend to use a bit of both. I enjoy using it for programming most of my projects. For certain, quick edits however I use `ed`
 
 * **CMake** {em} CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
-
-* **Git** {em} Git is my favourite version control system. I use it frequently when I develop projects. It allows me to manage the evolution of my source code, which aids in keeping the project tidy and organised
-
-* **CI/CD & Docker** {em} I utilise GitHub actions and Docker to automate the testing of my projects across different environments, and also to streamline binary distribution
 
 * **LaTeX & Markdown** {em} These are my tools of choice when it comes to technical documentation and making general notes. However, I tend to prefer https://asciidoc.org/[AsciiDoc] over Markdown due to its ability to modularise and reuse content. This README too, is written in AsciiDoc and not Markdown
 
@@ -481,17 +471,13 @@ int add(float x, float y) {
 }
 ----
 
-Seems pretty simple. As a user, these two are simply "the add function" to me. When I call `add(5, 10)`, the compiler looks at the arguments (two integers) and matches the call to the first definition. When I call `add(5.5f, 2.1f)`, it matches it to the second.
+Seems pretty simple. When I call `add(5, 10)`, the compiler looks at the arguments types (two integers) and matches the call to the first definition. When I call `add(5.5f, 2.1f)`, it matches it to the other.
 
-Now the problem is, even though the {cpp} compiler is perfectly happy with this, the linker however (the tool that combines multiple object files into a single executable) is not as flexible. The linker operates on a lower level where it treats symbols as unique addresses.
+Even though the {cpp} compiler is perfectly happy with this, the linker however (the tool that combines multiple object files into a single executable) is not as flexible. Linkers operate on unique symbol addresses and can't distinguish between identical identifiers. This is why you get "multiple definition" errors.
 
-From the POV of a linker, when you have two different pieces of code are both labeled `add`, I have no way to tell them apart and which one to jump to when a call to `add()` is made. So when I see two symbols with the same name, I'm gonna yell at the programmer and spit it as "multiple definition error".
+Since {cpp} allows you to have two things with the same name, the compiler must have a way to tell the linker that the two `add()` functions are different.
 
-Hold up, so the linker doesn't let you have two things with the same name, but {cpp} allows you to have two things with the same name? How does that work?
-
-As a compiler, we need way to convince the linker that "hey, these two `add()` functions are totally different" even though they look the same.
-
-Since the linker only wants unique symbols, our problem simplifies a bit {em} we need a way to transform identifiers into unique symbols. We need a way to be able to transform our beautiful `int add(int x, int y)` into a unique symbol. We wish to be able to _mangle_ our `add()` function. How do we do that?
+As a compiler, we need a way to be able to transform our `add` functions into unique symbols whilst remaining deterministic. We wish be able to _mangle_ our `add()` functions.
 
 Let's first check the {cpp} standard and see if it says anything about it.
 
@@ -533,19 +519,15 @@ _Z3addff:
         rep  ret
 ----
 
-Look at that, our integer-based and float-based `add()` functions were mangled to `_Z3addii` and `_Z3addff` respectively, just like what we came up with. 
+As we can see, the `add()` functions were mangled to `_Z3addii` and `_Z3addff`, just like what we came up with. 
 
-What about Clang? We'll compile it with x86-64 clang 6.0.1 using `-O3` flag:
+Clang uses the same Itanium ABI as GCC, we can expect to see the same mangled names when we compile with clang:
 
 [source,asm]
 ----
 _Z3addii:                               # @_Z3addii
 _Z3addff:                               # @_Z3addff
 ----
-
-Looks like our name mangling strategy is consistent.
-
-Okay cool, what about MSVC?
 
 *Question: Does MSVC mangle names the same way as GCC and Clang?*
 
@@ -576,17 +558,17 @@ y$ = 16
 ?add@@YAMMM@Z ENDP
 ----
 
-Interesting... looks like our `add()` functions were mangled into `?add@@YAHHH@Z` and `?add@@YAMMM@Z` instead of what we saw earlier.
+Looks like our `add()` functions were mangled into `?add@@YAHHH@Z` and `?add@@YAMMM@Z` instead of what we saw earlier.
 
 MSVC's mangling seems to be a bit of a mess. It's notorious for being a bit more complex and its interesting use of characters like `?`, `@` and `$`.
 
-GCC focuses on being a bit human-readable-ish, MSVC however focuses on encoding as much information as possible into the symbol, even including calling conventions as well as access levels (`public` vs. `private`).
+That's because MSVC focuses on encoding as much information as possible into the symbol, including calling conventions and access levels.
 
-To keep it simple, we'll focus only on `int add(int x, int y)` and see how MSVC mangles it into `?add@@YAHHH@Z`.
+Let's focus on `int add(int x, int y)` and see how MSVC mangles it into `?add@@YAHHH@Z`.
 
-The first `?` there marks the start of any MSVC mangled name. It's kind of like `_Z` in the case of GCC.
+The first `?` is equivalent to GCC's `_Z`.
 
-Next we have the function name itself `add`, but notice it doesn't prefix the length of the symbol like `3` in GCC. Instead, it reads until it hits a terminator. The `@@` acts as the terminator for the name (and in other cases provides namespace/class information).
+Next we have the name of the function `add`. Notice that it isn't prefixed with the length of the symbol. Unlike GCC, it reads until it hits a terminator. The `@@` acts as the terminator for the name (and in other cases provides namespace/class information).
 
 `YA` represents the calling convention, usually means `__cdecl` which is the default. If it were something like a `private` member of a `class`, `YA` would change to `IA` for `__thiscall`. This tells us that MSVC encodes the access of a function as well.
 
@@ -606,7 +588,7 @@ Congratulations, you can now read GCC, Clang and MSVC mangled symbols! Pretty co
 
 [cols="1,1",options="header"]
 |===
-| Aspect | Choice  
+| Aspect | Choice
 | Environment | {my-gh}/dotfiles[My Dotfiles] 
 | Text Editor | {editor-link}
 | OS | https://voidlinux.org/[Void Linux] 
