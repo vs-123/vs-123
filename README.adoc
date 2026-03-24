@@ -17,7 +17,7 @@
 :royal-hemlock-emacs-repo-raw: {my-gh-raw}/royal-hemlock-theme/refs/heads/main
 :royal-hemlock-nvim-repo-raw: {my-gh-raw}/royal-hemlock-nvim/refs/heads/main
 :cchat-repo-raw: {my-gh-raw}/cchat/refs/heads/main
-:pong-repo-raw: {my-gh-raw}/cchat/refs/heads/main
+:pong-repo-raw: {my-gh-raw}/pong/refs/heads/main
 :vs-123-repo-raw: {my-gh-raw}/vs-123/main
 
 // i switch between the two as my daily driver pretty often
