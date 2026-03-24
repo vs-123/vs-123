@@ -449,22 +449,11 @@ What's even cooler about this is that this `xor` operation tells the CPU that `e
 [%collapsible]
 ====
 
-{cpp}, ever since it was released, had introduced several features that require the compiler to do significant heavy lifting behind the scenes. One of the most fundamental features amongst is called function overloading. Function overloading is an interesting concept, it essentially allows you to have multiple functions with the same name as long as their parameter lists are different.
+In regular C, every function is supposed to have a unique name (an identifier). When you have a function that adds two integers, you might name it `add`. Later when you need a function to add two floating-point numbers instead of integers, you'd have to come up with a different name it something other than `add` whilst keeping it accessible, maybe `add_float` for example.
 
-In regular C, every function is supposed to have a unique name (an identifier). When you have a function that adds two integers, you might name it `add`. When you later need a function to add two floating-point numbers, you'd be forced to name it something other than `add`, for example, `add_float`.
+{cpp} however removes this restriction by allowing the "signature" of the function (its name plus its parameters) to act as its unique identity within the source code. The original intent of this was to allow for more intuitive APIs and to solve the `add` vs `add_float` problem.
 
-{cpp} removes this restriction by allowing the "signature" of the function (its name plus its parameters) to act as its unique identity within the source code. The original intent of this was to improve code readability and to allow for more intuitive APIs.
-
-Let's take a closer look at the `add` example, starting with C.
-
-[source,c]
-----
-int add(int x, int y) {
-   return x + y;
-}
-----
-
-So far so good, we have the `add` function as we described {em} takes two integers and gives back their sum. Let's write our `add_float` as well.
+Let's take a closer look at the `add` vs `add_float` example in C.
 
 [source,c]
 ----
@@ -477,7 +466,7 @@ int add_float(float x, float y) {
 }
 ----
 
-Great, we now have the same `add` function but this one now works for `float` arguments. But notice that the names are now different. As a user, I now have to be aware of the fact that both `add()` and `add_float()` exist.
+Notice the names are different. As a user, I now have to be aware of the fact that both `add()` and `add_float()` exist.
 
 Cool, what about {cpp}? Since {cpp} removes this restriction of having unique names for functions, we could just do something like:
 
@@ -492,47 +481,41 @@ int add(float x, float y) {
 }
 ----
 
-And BOOM, it works!
-
-As a user, these two are simply "the add function" to me. When I call `add(5, 10)`, the compiler looks at the arguments (two integers) and matches the call to the first definition. When I call `add(5.5f, 2.1f)`, it matches it to the second.
+Seems pretty simple. As a user, these two are simply "the add function" to me. When I call `add(5, 10)`, the compiler looks at the arguments (two integers) and matches the call to the first definition. When I call `add(5.5f, 2.1f)`, it matches it to the second.
 
 Now the problem is, even though the {cpp} compiler is perfectly happy with this, the linker however (the tool that combines multiple object files into a single executable) is not as flexible. The linker operates on a lower level where it treats symbols as unique addresses.
 
-From the point of view of a linker, if you have two different pieces of code are both labeled `add`, I now have no way of knowing which one to jump to when a function call is made. I cannot tell which function the program want me to jump to when it calls `add(5, 10)`. So when I see two symbols with the same name, I'm gonna yell at the programmer for being dumb and spit it as "multiple definition error".
+From the POV of a linker, when you have two different pieces of code are both labeled `add`, I have no way to tell them apart and which one to jump to when a call to `add()` is made. So when I see two symbols with the same name, I'm gonna yell at the programmer and spit it as "multiple definition error".
 
 Hold up, so the linker doesn't let you have two things with the same name, but {cpp} allows you to have two things with the same name? How does that work?
 
-Hmm, let's think of it as if I'm writing the {cpp} compiler. So, I'm writing my {cpp} compiler and I want programmers to be able to have two `add()` functions but my linker doesn't let me do that.
+As a compiler, we need way to convince the linker that "hey, these two `add()` functions are totally different" even though they look the same.
 
-I need way to convince the linker that "hey, these two `add()` functions are totally different" even though they look the same.
+Since the linker only wants unique symbols, our problem simplifies a bit {em} we need a way to transform identifiers into unique symbols. We need a way to be able to transform our beautiful `int add(int x, int y)` into a unique symbol. We wish to be able to _mangle_ our `add()` function. How do we do that?
 
-Since the linker only wants unique symbols, we need a way to transform identifiers into unique symbols. We need a way to be able to transform our beautiful `int add(int x, int y)` into a unique symbol. We wish to be able to _mangle_ our `add()` function. How do we do that?
-
-Hmmm, let's check the {cpp} standard and see if it says anything about it.
+Let's first check the {cpp} standard and see if it says anything about it.
 
 image:{vs-123-repo-raw}/cpp_std_name_mangling.png[C++ Standard Name Mangling]
 
-It says that signatures are (supposed to be) used for name mangling. However, searching the whole PDF, we don't see anything that tells about _how_ to mangle a function name. Oh well, looks like we're on our own.
+It gives us a hint that we need to use the signature for name mangling. However, searching the whole PDF, we don't see anything that tells about _how_ to mangle a function name. Oh well, looks like we're on our own.
 
-Okay so before we get started with mangling, we need to make sure that our beautiful `add()` function does not collide with ordinary C functions. We can use a prefix for this. Let's just use `_Z` as a prefix to be able to tell that this symbol's been mangled.
+Okay so before we get started with mangling, we need a way to make sure that our beautiful `add()` function does not collide with ordinary C functions. We could use a prefix for this, say `_Z`.
 
-Now both of the `add()` functions become `_Zadd`. However, we need to add bit more structure to prevent ambiguity with different name lengths. To deal with this, we can add the length of the function name right after our special prefix. `add` is just three characters long, so the symbols now become `_Z3add`.
+Now both of the `add()` functions become `_Zadd`. However, we still need to add bit more structure to prevent ambiguity with different name lengths. To deal with this, we could add the length of the function name right after our prefix. The symbol now becomes `_Z3add`. However, we still have a collision between both `add()` functions.
 
-We still have a collision :(
+The only difference left between the two is the parameter list. The standard gave us a hint that we could use the signature for name mangling, and parameter list _does_ count as part of the signature. How can we use the parameter list to tell them apart? How can we encode them into the symbol?
 
-The only difference left between the two functions is the parameter list. Hmmm, I remember that the standard said we could use the signature for name mangling. Parameter list does count as part of the signature. How can we use the parameter list to tell them apart? How can we encode them in the name?
+We obviously can't use the parameter names themselves, since you can have both `int add(int x, int y)` and `float add(float x, float y)` even though they use the same parameter names `x` and `y`. What we do know is that, two functions with the same name *must* have different parameter type lists. So instead of parameter names, we could use the types itself. In this case, we have two `int` and two `float`, let's use `i` to represent `int` and `f` to represent `float`.
 
-We obviously can't use the parameter names themselves, since there's no guarantee that they can't and won't be the same. But, what we do know is that two functions with the same name *must* have different parameter type lists. That's the key. We can use the types instead. In this case, we have two `int` and two `float`, let's use `i` to represent `int` and `f` to represent `float`.
-
-We're gonna append these representations to the mangled symbol name to make it unique. The first `add()` takes two integers, thus we append `ii` and it becomes `_Z3addii`. The other `add()` function takes two floats, thus we append `ff` and get `_Z3addff`. So the final mangled names are `_Z3addii` and `_Z3addff` respectively.
+We're gonna append these representations to the symbol name according to their order. The first `add()` takes two integers, so we append `ii` and get `_Z3addii`. The other `add()` function takes two floats, so we append `ff` and get `_Z3addff`. Hence, the mangled names are `_Z3addii` and `_Z3addff` respectively.
 
 Congratulations, you just invented GCC name mangling! The linker now sees two different symbols `_Z3addii` and `_Z3addff`, even though you wrote two `add()` functions in your C++ code. This is the core of the *Itanium C++ ABI*, used by both GCC and Clang.
 
-Wait, am I saying that _this_ is how GCC would mangle my beautiful `add()` function? Yes I am! 
+Wait, so _this_ is how GCC would mangle my beautiful `add()` function? I don't believe you.
 
-Don't believe me? Let's try it on Godbolt.
+Fair enough, let's try it on Godbolt.
 
-To keep it simple, we'll just keep the function signatures as it is and leave the bodies empty:
+To keep it simple, we'll leave the bodies empty:
 
 [source,cpp]
 ----
@@ -540,7 +523,7 @@ int add(int x, int y) {}
 float add(float x, float y) {}
 ----
 
-When you compile this with x86-64 gcc 4.0.4 with `-O3` flag, you get:
+When you compile this with x86-64 gcc 4.0.4 using `-O3` flag, you get:
 
 [source,asm]
 ----
@@ -550,9 +533,9 @@ _Z3addff:
         rep  ret
 ----
 
-Wow, look at that! Our integer-based `add()` was mangled to `_Z3addii` and float-based `add()` was mangled to `_Z3addff`, just like what we came up with earlier. 
+Look at that, our integer-based and float-based `add()` functions were mangled to `_Z3addii` and `_Z3addff` respectively, just like what we came up with. 
 
-What about Clang? We'll compile it with x86-64 clang 6.0.1 with `-O3` flag:
+What about Clang? We'll compile it with x86-64 clang 6.0.1 using `-O3` flag:
 
 [source,asm]
 ----
@@ -560,9 +543,9 @@ _Z3addii:                               # @_Z3addii
 _Z3addff:                               # @_Z3addff
 ----
 
-Excellent, our name mangling strategy seems to be consistent.
+Looks like our name mangling strategy is consistent.
 
-Okay cool, so our name mangling strategy works well with GCC and Clang. What about MSVC? Does it do the same?
+Okay cool, what about MSVC?
 
 *Question: Does MSVC mangle names the same way as GCC and Clang?*
 
@@ -574,7 +557,7 @@ int add(int x, int y) {return 0;}
 float add(float x, float y) {return 0;}
 ----
 
-Specifically, we'll be using x64 msvc v19.50 VS18.2 with `/O2` flag. Compiling with that, we get:
+Specifically, we'll be using x64 msvc v19.50 VS18.2 with `/O2` flag. We get:
 
 [source,asm]
 ----
@@ -590,14 +573,12 @@ y$ = 16
 ?add@@YAMMM@Z PROC                                  ; add, COMDAT
         xorps   xmm0, xmm0
         ret     0
-?add@@YAMMM@Z ENDP     
+?add@@YAMMM@Z ENDP
 ----
 
-Interesting... looks like our beautiful `add()` functions were mangled into `?add@@YAHHH@Z` and `?add@@YAMMM@Z` instead of `_Z3addii` and `_Z3addff`.
+Interesting... looks like our `add()` functions were mangled into `?add@@YAHHH@Z` and `?add@@YAMMM@Z` instead of what we saw earlier.
 
-Before we delve into the _why_ behind this, let's understand _how_ MSVC mangles it in the first place.
-
-If we consider GCC's mangling, the one we came up with, as a logical sentence, we'd realise MSVC's mangling is more of an encrypted state machine. It's notorious for being interestingly a bit more complex and its usage of characters like `?`, `@` and `$`.
+MSVC's mangling seems to be a bit of a mess. It's notorious for being a bit more complex and its interesting use of characters like `?`, `@` and `$`.
 
 GCC focuses on being a bit human-readable-ish, MSVC however focuses on encoding as much information as possible into the symbol, even including calling conventions as well as access levels (`public` vs. `private`).
 
@@ -605,21 +586,19 @@ To keep it simple, we'll focus only on `int add(int x, int y)` and see how MSVC 
 
 The first `?` there marks the start of any MSVC mangled name. It's kind of like `_Z` in the case of GCC.
 
-Next we have the function name itself `add`, but notice it doesn't prefix the length of the symbol like `3` in GCC. Instead, it reads until it meets the null terminator, in this case `@@`. The `@@` acts as the terminator for the name (and in other cases provides namespace/class information).
+Next we have the function name itself `add`, but notice it doesn't prefix the length of the symbol like `3` in GCC. Instead, it reads until it hits a terminator. The `@@` acts as the terminator for the name (and in other cases provides namespace/class information).
 
-`YA` represents the calling convention, usually means `__cdecl` which is the default. If it were something like a `private` member of a `class`, `YA` would change it to `IA` which means `__thiscall`. So yeah, we see that MSVC encodes whether a function is public, private or protected directly into the name.
+`YA` represents the calling convention, usually means `__cdecl` which is the default. If it were something like a `private` member of a `class`, `YA` would change to `IA` for `__thiscall`. This tells us that MSVC encodes the access of a function as well.
 
-We then see `HHH`. `H` in MSVC represents an `int`. MSVC uses a specific alphabet for types that goes `H` for `int`, `M` for `float`, `N` for `double`, `X` for void and `PA` for pointers.
+We then see `HHH`. Remember how we used `i` for `int` earlier? MSVC too has its own alphabet for types that goes `H` for `int`, `M` for `float`, `N` for `double`, `X` for void and `PA` for pointers.
 
-The first `H` in `HHH` is the return type. The second `H` is the first parameter and the third `H` is the second parameter. Notice that, unlike GCC, MSVC also includes the return type in its mangled name. Even though you can't overload in C++ by just the return type, the idea is to let the linker use it as an extra safety check to ensure you aren't linking against a version of the function that returns something different.
+The first `H` in `HHH` is the return type. The second `H` is the first parameter and the third is the second parameter. Notice that, unlike GCC, MSVC also includes the return type in its mangled name. The idea is to let the linker use it as an extra safety check to ensure you aren't linking against a version of the function that returns something different.
 
-Finally, `@Z` is again another terminator, this time it's for the argument list.
+Finally, `@Z` is again another terminator, this time it's for the parameter list. It tells where the parameters end.
 
-The same mangling logic applies for `float add(float x, float y)`, except since it now uses three `float` types instead of `int` types, the `HHH` in the mangle would instead be `MMM` and hence you'd end up with `?add@@YAMMM@Z`.
+The same mangling logic applies for `float add(float x, float y)`. Since it uses three `float` types, the `HHH` in the mangle would become `MMM` and hence you'd end up with `?add@@YAMMM@Z`.
 
-Congratulations, you can now read GCC, Clang and MSVC mangled symbols!
-
-So yeah, name mangling is an interesting concept in {cpp} that lets you have multiple functions with the same name.
+Congratulations, you can now read GCC, Clang and MSVC mangled symbols! Pretty cool, right?
 
 ====
 
