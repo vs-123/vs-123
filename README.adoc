@@ -596,7 +596,7 @@ Congratulations, you can now read GCC, Clang and MSVC mangled symbols! Pretty co
 | Aspect | Choice
 | Environment | {my-gh}/dotfiles[My Dotfiles] 
 | Text Editor | {editor-link}
-| OS | link:{my-gh}/kalium-void[Kalium Void -- My person Void Linux spin-off] 
+| OS | link:{my-gh}/kalium-void[Kalium Void] 
 | WM | {my-gh}/dotfiles/tree/main/dot_config/openbox[Openbox] 
 | Shell | {my-gh}/dotfiles/blob/main/dot_zshrc[Zsh]
 |===
