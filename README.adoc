@@ -55,7 +55,7 @@ image::{skill-icons-url}[width=100%, align=center]
 
 * **TypeScript** {em} TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
 
-* **Linux & BSD** {em} I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although link:{my-gh}/kalium-void[Kalium Void] is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
+* **Linux & BSD** {em} I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although Void Linux is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
 
 * **Vim** {em} Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
 
@@ -596,7 +596,7 @@ Congratulations, you can now read GCC, Clang and MSVC mangled symbols! Pretty co
 | Aspect | Choice
 | Environment | {my-gh}/dotfiles[My Dotfiles] 
 | Text Editor | {editor-link}
-| OS | link:{my-gh}/kalium-void[Kalium Void] 
+| OS | link:https://voidlinux.org/[Void Linux] 
 | WM | {my-gh}/dotfiles/tree/main/dot_config/openbox[Openbox] 
 | Shell | {my-gh}/dotfiles/blob/main/dot_zshrc[Zsh]
 |===
