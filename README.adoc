@@ -21,6 +21,7 @@
 :vs-123-repo-raw: {my-gh-raw}/vs-123/main
 
 // i switch between the two as my daily driver pretty often
+:use-emacs:
 ifdef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_emacs[Emacs]]
 ifndef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_config/nvim/[Neovim]]
 
