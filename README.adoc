@@ -138,7 +138,6 @@ image::{pong-repo-raw}/assets/pong-gameplay.gif[PONG GAMEPLAY -- vs-123]
 +
 image::{mswpr-repo-raw}/assets/screenshot.png[mswpr Screenshot, width=75%]
 * {my-gh}/kernel[kernel] {em} A dead-simple kernel written in C99 with LLVM toolchain
-* {my-gh}/kalium-void[Kalium Void] {em} My personal, custom Linux distro based on Void Linux. This is my daily driver OS. Utilises link:{my-gh}/kalium-packages[Kalium Packages] repository alongside that of Void, has a modified base, unique identity, built-in Nix package manager, pre-installed essential packages, pre-installed fonts, uses X.Org/X11 display server with openbox WM, uses zsh as default shell instead of dash, uses GRUB for bootloader. Custom installation script is provided.
 * {my-gh}/tegen[tegen] {em} A recursive, stochastic text generator for Rust
 * {my-gh}/auc[auc] {em} A high-performance, lightweight, cross-platform, thread-safe and dependency-minimal auto-clicker written in C11
 * {my-gh}/firethorn[firethorn] {em} Simple extension for Firefox that brings back English's lost letter thorn (þ)
@@ -598,7 +597,7 @@ Congratulations, you can now read GCC, Clang and MSVC mangled symbols! Pretty co
 | Aspect | Choice
 | Environment | {my-gh}/dotfiles[My Dotfiles] 
 | Text Editor | {editor-link}
-| OS | link:{my-gh}/kalium-void[Kalium Void] 
+| OS | link:{my-gh}/kflake[NixOS] 
 | WM | {my-gh}/dotfiles/tree/main/dot_config/openbox[Openbox] 
 | Shell | {my-gh}/dotfiles/blob/main/dot_zshrc[Zsh]
 |===
