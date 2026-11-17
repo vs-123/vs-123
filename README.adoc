@@ -27,10 +27,7 @@ ifndef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_config/nvim/[Neov
 
 = Introduction
 
-Hi, I'm vs-123. I am a passionate programmer. My interests primarily revolve around low-level development.
-
-C is my primary language of choice with a specific fondness for C99. I enjoy its efficiency and the granular control it offers me over machine state. I find its philosophy aligning well with my interest in building lean & transparent systems.
-
+Hi, I'm vs-123. I am a passionate programmer. I enjoy programming, especially with C.
 
 == Skills
 
