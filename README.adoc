@@ -27,9 +27,9 @@ ifndef::use-emacs[:editor-link: {my-gh}/dotfiles/tree/main/dot_config/nvim/[Neov
 
 = Introduction
 
-Hi, I'm vs-123. I am a passionate programmer. I have a deep-seated interest in the inner workings of computers. My interests primarily revolve around low-level development. I enjoy bridging the gap between hardware and software.
+Hi, I'm vs-123. I am a passionate programmer. My interests primarily revolve around low-level development.
 
-C is my primary language of choice with a specific fondness for C99. I appreciate its efficiency and the granular control it offers over machine state, and I find its philosophy aligns perfectly with my interest in building lean & transparent systems.
+C is my primary language of choice with a specific fondness for C99. I enjoy its efficiency and the granular control it offers me over machine state. I find its philosophy aligning well with my interest in building lean & transparent systems.
 
 
 == Skills
@@ -37,36 +37,6 @@ C is my primary language of choice with a specific fondness for C99. I appreciat
 [#skill-icons]
 [.text-center]
 image::{skill-icons-url}[width=100%, align=center]
-
-* **C** {em} C is my primary tool of choice for exploring the machine state. I highly value and enjoy the transparency, lean nature and the fine control it offers me over memory and hardware
-
-* **{cpp}** {em} {cpp} has been my bridge from high-level abstractions to systems programming. I still use it when the project requires complex architectural patterns or modern abstractions
-
-* **Rust** {em} Rust shaped my understanding of memory safety and has equipped me with key concepts such as memory ownership, borrowing, pointer aliasing, unsafe optimisations, etc.
-
-* **WASM** {em} I treat the web as just another compilation target. Sometimes I write projects in C/C++/Rust which I wish to be able to use on my browser, in such cases I compile to WASM
-
-* **Regex** {em} Beyond just using it, I've implemented a PCRE-compatible engine called {my-gh}/regen[regen] from scratch in C99, in order to understand how it works deep under the hood. This has given me deep insights on not just regex, but also non-finite automata and backtracking
-
-* **Python** {em} I use Python as a scripting language, as a glue language. I use it mostly for writing quick scripts that are slightly more complex for bash, quick prototypes of algorithms, visualising data and making statistical observations and verification, like that of {my-gh}/ystar[ystar]
-
-* **Lua** {em} I enjoy Lua's simplicity for a scripting language, and its embeddable nature. I use it primarily for my Neovim configuration.
-
-* **Haskell** {em} Haskell is my playground and laboratory for parser algorithms. I use Haskell for writing quick parser algorithms, as well as testing them. It's functional nature and expressive type system makes it a perfect environment for me to test formal grammars
-
-* **TypeScript** {em} TypeScript was my first encounter with a formal type system. Initially I disliked its statically-typed nature, but after a while of using it, I had eventually learnt to appreciate type systems in general. The fact that I could catch potential errors before runtime was a fascinating idea to me, coming from JavaScript where somehow `0 == "0"` and `"0" == []` are `true` but `0 == []` is `false` and `('b' + 'a' + + 'a' + 'a').toLowerCase()` becomes `"banana"`
-
-* **Linux & BSD** {em} I enjoy exploring the philosophies of various platforms including *nix ecosystem, which also includes Linux and BSD. Although link:{my-gh}/kalium-void[Kalium Void] is my daily driver, I admire the BSD family committing to the true UNIX philosophy. I especially admire the idea of "do one thing and do it well", which is pretty evident in the BSD userland and architecture
-
-* **Vim** {em} Vim is the first text editor I tried after months of VSCode. I found the idea of using my entire keyboard to manipulate text quite interesting. Vim has been my entry point into keyboard-oriented text editors 
-
-* **Emacs** {em} I enjoy the highly customisable nature of Emacs. What stands out for me the most is the idea of it being a "self-documenting editor". I really appreciate its built-in help features, especially `C-h` chords
-
-* **Neovim** {em} I enjoy the idea that I can use Lua to customise Vim over using Vimscript, although I tend to use a bit of both. I enjoy using it for programming most of my projects. For certain, quick edits however I use `ed`
-
-* **CMake** {em} CMake is my primary meta-buildsystem of choice when I write C and C++ projects. I enjoy its ability to general build files for various buildsystems. This allows my projects, which I build with GNU Make, to be built on someone's Windows machine with Visual Studio
-
-* **LaTeX & Markdown** {em} These are my tools of choice when it comes to technical documentation and making general notes. However, I tend to prefer https://asciidoc.org/[AsciiDoc] over Markdown due to its ability to modularise and reuse content. This README too, is written in AsciiDoc and not Markdown
 
 == Top Projects
 
@@ -366,7 +336,7 @@ So yeah, whether it was intended or not, it's actually convenient for x64 CPUs.
 .*Why XOR EAX, EAX?* (click to expand)
 [%collapsible]
 ====
-Let's take a very simple C program as follows:
+Consider the following C program.
 [source,c]
 ----
 int main(void) {
