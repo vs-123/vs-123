@@ -113,8 +113,6 @@ image::{mswpr-repo-raw}/assets/screenshot.png[mswpr Screenshot, width=75%]
 image:{royal-hemlock-emacs-repo-raw}/royal-hemlock-theme.png[Royal Hemlock Theme, width=75%]
 image:{royal-hemlock-nvim-repo-raw}/royal-hemlock-theme-ss.png[Royal Hemlock Neovim, width=75%]
 
-====
-
 == Miscellaneous
 
 [cols="1,1",options="header"]
